@@ -95,6 +95,12 @@ const PostPage = () => {
       });
     }
   }, [content, contentType, loading]);
+  const readingTime = useMemo(() => {
+    if (!content) return null;
+    const text = content.replace(/<[^>]*>/g, "").replace(/[#*`~\[\]()>_-]/g, "");
+    const words = text.trim().split(/\s+/).length;
+    return Math.max(1, Math.ceil(words / 200));
+  }, [content]);
 
   if (!post) {
     return (
@@ -116,13 +122,6 @@ const PostPage = () => {
     day: "numeric",
     year: "numeric",
   });
-
-  const readingTime = useMemo(() => {
-    if (!content) return null;
-    const text = content.replace(/<[^>]*>/g, "").replace(/[#*`~\[\]()>_-]/g, "");
-    const words = text.trim().split(/\s+/).length;
-    return Math.max(1, Math.ceil(words / 200));
-  }, [content]);
 
   const postPath = (p: Post) => `/${p.category}/${p.day}`;
 
