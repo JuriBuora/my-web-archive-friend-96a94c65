@@ -1,4 +1,5 @@
 import BlogHeader from "@/components/BlogHeader";
+import BlogFooter from "@/components/BlogFooter";
 import ScrollToTop from "@/components/ScrollToTop";
 import HeroSection from "@/components/HeroSection";
 import ProgressTimeline from "@/components/ProgressTimeline";
@@ -14,11 +15,7 @@ const Index = () => {
       <ProgressTimeline />
       <AboutSection />
       <PostList />
-      <footer className="border-t border-border py-8 text-center">
-        <p className="font-mono text-xs text-muted-foreground">
-          © 2026 Juri Buora · From Zero to Cybersecurity
-        </p>
-      </footer>
+      <BlogFooter />
     </div>
   );
 };

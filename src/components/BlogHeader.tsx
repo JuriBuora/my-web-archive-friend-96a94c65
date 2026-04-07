@@ -23,6 +23,12 @@ const BlogHeader = () => {
           </span>
         </Link>
         <div className="flex items-center gap-1">
+          <Link
+            to="/about"
+            className="px-2 py-1 rounded-md text-xs font-mono text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
+          >
+            About
+          </Link>
           <button
             onClick={toggle}
             className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
