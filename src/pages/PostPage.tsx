@@ -84,7 +84,17 @@ const PostPage = () => {
       });
   }, [post]);
 
-  if (!post) {
+  // Apply highlight.js to HTML content code blocks
+  useEffect(() => {
+    if (contentType === "html" && content && !loading) {
+      import("highlight.js/lib/common").then((hljs) => {
+        document.querySelectorAll("div.prose pre code").forEach((el) => {
+          hljs.default.highlightElement(el as HTMLElement);
+        });
+      });
+    }
+  }, [content, contentType, loading]);
+
     return (
       <div className="min-h-screen bg-background">
         <BlogHeader />
