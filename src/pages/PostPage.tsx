@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
   const [content, setContent] = useState<string | null>(null);
+  const [contentType, setContentType] = useState<"markdown" | "html">("markdown");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
