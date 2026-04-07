@@ -40,7 +40,8 @@ const PostPage = () => {
       ? `lab-${String(post.day).padStart(2, "0")}`
       : `day-${String(post.day).padStart(2, "0")}`;
 
-    const rawUrl = `https://raw.githubusercontent.com/JuriBuora/JuriBuora.github.io/main/_posts/${dateParts[0]}-${dateParts[1]}-${dateParts[2]}-${fileName}.md`;
+    const folder = post.category === "lab" ? "Labs" : "Blog";
+    const rawUrl = `https://raw.githubusercontent.com/JuriBuora/JuriBuora.github.io/main/${folder}/_posts/${dateParts[0]}-${dateParts[1]}-${dateParts[2]}-${fileName}.md`;
 
     fetch(rawUrl)
       .then((res) => {
