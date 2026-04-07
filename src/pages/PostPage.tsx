@@ -9,6 +9,7 @@ import { posts, labs, type Post } from "@/data/posts";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucide-react";
 import TableOfContents from "@/components/TableOfContents";
 import ScrollToTop from "@/components/ScrollToTop";
+import useCodeCopyButtons from "@/hooks/useCodeCopyButtons";
 
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
