@@ -1,5 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useMemo, useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import BlogHeader from "@/components/BlogHeader";
 import { posts, labs, type Post } from "@/data/posts";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react";
@@ -33,13 +35,11 @@ const PostPage = () => {
     setLoading(true);
     setError(false);
 
-    // Try fetching the raw markdown from the GitHub repo
     const dateParts = post.date.split("-");
     const fileName = post.category === "lab"
       ? `lab-${String(post.day).padStart(2, "0")}`
       : `day-${String(post.day).padStart(2, "0")}`;
 
-    // Try the _posts directory structure
     const rawUrl = `https://raw.githubusercontent.com/JuriBuora/JuriBuora.github.io/main/_posts/${dateParts[0]}-${dateParts[1]}-${dateParts[2]}-${fileName}.md`;
 
     fetch(rawUrl)
@@ -48,7 +48,6 @@ const PostPage = () => {
         return res.text();
       })
       .then((text) => {
-        // Strip YAML front matter
         const stripped = text.replace(/^---[\s\S]*?---\n*/m, "");
         setContent(stripped);
         setLoading(false);
@@ -159,8 +158,8 @@ const PostPage = () => {
             </div>
           )}
           {!loading && !error && content && (
-            <div className="prose prose-invert prose-sm max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-card-foreground prose-a:text-primary prose-strong:text-foreground prose-code:text-primary prose-code:bg-secondary prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-pre:bg-secondary prose-pre:border prose-pre:border-border prose-li:text-card-foreground prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground font-mono text-sm leading-relaxed whitespace-pre-wrap">
-              {content}
+            <div className="prose prose-invert prose-sm max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-card-foreground prose-a:text-primary hover:prose-a:underline prose-strong:text-foreground prose-code:text-primary prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:before:content-none prose-code:after:content-none prose-pre:bg-secondary prose-pre:border prose-pre:border-border prose-pre:rounded-lg prose-li:text-card-foreground prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground prose-img:rounded-lg prose-hr:border-border">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
             </div>
           )}
         </div>
