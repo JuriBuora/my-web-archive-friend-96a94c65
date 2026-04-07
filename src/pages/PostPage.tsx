@@ -182,7 +182,11 @@ const PostPage = () => {
           )}
           {!loading && !error && content && (
             <div className="prose prose-invert prose-sm max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-card-foreground prose-a:text-primary hover:prose-a:underline prose-strong:text-foreground prose-code:text-primary prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:before:content-none prose-code:after:content-none prose-pre:bg-secondary prose-pre:border prose-pre:border-border prose-pre:rounded-lg prose-li:text-card-foreground prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground prose-img:rounded-lg prose-hr:border-border">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+              {contentType === "markdown" ? (
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+              ) : (
+                <div dangerouslySetInnerHTML={{ __html: content }} />
+              )}
             </div>
           )}
         </div>
