@@ -151,6 +151,12 @@ const PostPage = () => {
               <Calendar className="w-3 h-3" />
               {formattedDate}
             </span>
+            {readingTime && (
+              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                <Clock className="w-3 h-3" />
+                {readingTime} min read
+              </span>
+            )}
           </div>
           <h1 className="text-2xl md:text-4xl font-bold text-foreground leading-tight mb-4">
             {post.title}
