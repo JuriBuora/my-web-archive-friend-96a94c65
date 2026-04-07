@@ -9,6 +9,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <BlogHeader />
       <HeroSection />
+      <ProgressTimeline />
       <AboutSection />
       <PostList />
       <footer className="border-t border-border py-8 text-center">
