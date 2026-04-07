@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
+import BlogFooter from "@/components/BlogFooter";
 import { posts, labs, type Post } from "@/data/posts";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucide-react";
 import TableOfContents from "@/components/TableOfContents";
@@ -263,11 +264,7 @@ const PostPage = () => {
 
         <TableOfContents contentReady={!loading && !error && !!content} />
       </div>
-      <footer className="border-t border-border py-8 text-center">
-        <p className="font-mono text-xs text-muted-foreground">
-          © 2026 Juri Buora · From Zero to Cybersecurity
-        </p>
-      </footer>
+      <BlogFooter />
     </div>
   );
 };
