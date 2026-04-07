@@ -44,6 +44,7 @@ const PostPage = () => {
     const folder = post.category === "lab" ? "Labs" : "Blog";
     const rawUrl = `https://raw.githubusercontent.com/JuriBuora/JuriBuora.github.io/main/${folder}/_posts/${dateParts[0]}-${dateParts[1]}-${dateParts[2]}-${fileName}.md`;
 
+    // Try raw markdown from GitHub first
     fetch(rawUrl)
       .then((res) => {
         if (!res.ok) throw new Error("Not found");
@@ -51,13 +52,33 @@ const PostPage = () => {
       })
       .then((text) => {
         const stripped = text.replace(/^---[\s\S]*?---\n*/m, "");
+        setContentType("markdown");
         setContent(stripped);
         setLoading(false);
       })
       .catch(() => {
-        setContent(null);
-        setLoading(false);
-        setError(true);
+        // Fall back to the live Jekyll site HTML
+        fetch(post.url)
+          .then((res) => {
+            if (!res.ok) throw new Error("Not found");
+            return res.text();
+          })
+          .then((html) => {
+            // Extract the post-content div
+            const match = html.match(/<div class="post-content[^"]*"[^>]*>([\s\S]*?)<\/div>\s*(?:<\/article>|<a class)/);
+            if (match) {
+              setContentType("html");
+              setContent(match[1].trim());
+              setLoading(false);
+            } else {
+              throw new Error("Could not extract content");
+            }
+          })
+          .catch(() => {
+            setContent(null);
+            setLoading(false);
+            setError(true);
+          });
       });
   }, [post]);
 
