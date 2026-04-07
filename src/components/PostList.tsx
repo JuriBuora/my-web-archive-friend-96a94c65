@@ -117,7 +117,7 @@ const PostList = () => {
           </h2>
           <div className="space-y-2">
             {items.map((post) => (
-              <PostCard key={`${post.category}-${post.day}`} post={post} />
+              <PostCard key={`${post.category}-${post.day}`} post={post} onTagClick={toggleTag} />
             ))}
           </div>
         </div>
