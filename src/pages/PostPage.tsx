@@ -97,6 +97,9 @@ const PostPage = () => {
       });
     }
   }, [content, contentType, loading]);
+
+  useCodeCopyButtons(!loading && !error && !!content);
+
   const readingTime = useMemo(() => {
     if (!content) return null;
     const text = content.replace(/<[^>]*>/g, "").replace(/[#*`~\[\]()>_-]/g, "");
