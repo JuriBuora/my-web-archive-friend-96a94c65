@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { useMemo, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import { posts, labs, type Post } from "@/data/posts";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react";
