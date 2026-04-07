@@ -1,9 +1,17 @@
-import { Shield, Github, Sun, Moon } from "lucide-react";
+import { Shield, Github, Sun, Moon, Linkedin, Facebook, Twitter, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "@/components/ThemeProvider";
 
 const BlogHeader = () => {
   const { theme, toggle } = useTheme();
+
+  const socialLinks = [
+    { href: "https://www.linkedin.com/in/juri-buora/", icon: Linkedin, label: "LinkedIn" },
+    { href: "https://www.facebook.com/Juri.Buora", icon: Facebook, label: "Facebook" },
+    { href: "https://x.com/JBuora", icon: Twitter, label: "Twitter/X" },
+    { href: "https://github.com/JuriBuora", icon: Github, label: "GitHub" },
+    { href: "mailto:juribuora@gmail.com", icon: Mail, label: "Email" },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
@@ -14,7 +22,7 @@ const BlogHeader = () => {
             juri<span className="text-primary">@</span>security
           </span>
         </Link>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1">
           <button
             onClick={toggle}
             className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
@@ -22,15 +30,18 @@ const BlogHeader = () => {
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
-          <a
-            href="https://github.com/JuriBuora/JuriBuora.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Github className="w-4 h-4" />
-            <span className="hidden sm:inline">Source</span>
-          </a>
+          {socialLinks.map(({ href, icon: Icon, label }) => (
+            <a
+              key={label}
+              href={href}
+              target={href.startsWith("mailto:") ? undefined : "_blank"}
+              rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+              className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-secondary transition-colors"
+              aria-label={label}
+            >
+              <Icon className="w-4 h-4" />
+            </a>
+          ))}
         </div>
       </div>
     </header>
