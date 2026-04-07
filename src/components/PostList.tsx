@@ -1,13 +1,23 @@
 import { useState, useMemo } from "react";
-import { posts, labs } from "@/data/posts";
+import { posts, labs, allTags } from "@/data/posts";
 import PostCard from "./PostCard";
-import { Search } from "lucide-react";
+import { Search, X } from "lucide-react";
 
 const PostList = () => {
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState<"all" | "blog" | "lab">("all");
+  const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
 
   const allPosts = useMemo(() => [...posts, ...labs], []);
+
+  const toggleTag = (tag: string) => {
+    setActiveTags((prev) => {
+      const next = new Set(prev);
+      if (next.has(tag)) next.delete(tag);
+      else next.add(tag);
+      return next;
+    });
+  };
 
   const filtered = useMemo(() => {
     let items = activeTab === "all" ? allPosts : activeTab === "blog" ? posts : labs;
@@ -19,10 +29,12 @@ const PostList = () => {
           p.tags.some((t) => t.includes(q))
       );
     }
+    if (activeTags.size > 0) {
+      items = items.filter((p) => p.tags.some((t) => activeTags.has(t)));
+    }
     return items;
-  }, [search, activeTab, allPosts]);
+  }, [search, activeTab, activeTags, allPosts]);
 
-  // Group by month
   const grouped = useMemo(() => {
     const map = new Map<string, typeof filtered>();
     for (const post of filtered) {
@@ -38,7 +50,7 @@ const PostList = () => {
 
   return (
     <section className="container mx-auto px-4 py-16 max-w-3xl">
-      <div className="flex flex-col sm:flex-row gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row gap-4 mb-4">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
           <input
@@ -66,9 +78,35 @@ const PostList = () => {
         </div>
       </div>
 
+      {/* Tag filter chips */}
+      <div className="flex flex-wrap gap-1.5 mb-8">
+        {allTags.map((tag) => (
+          <button
+            key={tag}
+            onClick={() => toggleTag(tag)}
+            className={`font-mono text-[11px] px-2 py-1 rounded-md border transition-all duration-200 ${
+              activeTags.has(tag)
+                ? "bg-primary/20 border-primary/50 text-primary"
+                : "border-border text-muted-foreground hover:border-primary/30 hover:text-secondary-foreground"
+            }`}
+          >
+            {tag}
+          </button>
+        ))}
+        {activeTags.size > 0 && (
+          <button
+            onClick={() => setActiveTags(new Set())}
+            className="font-mono text-[11px] px-2 py-1 rounded-md border border-destructive/30 text-destructive flex items-center gap-1 hover:bg-destructive/10 transition-colors"
+          >
+            <X className="w-3 h-3" />
+            clear
+          </button>
+        )}
+      </div>
+
       {grouped.length === 0 && (
         <p className="text-center text-muted-foreground py-12 font-mono text-sm">
-          No posts found matching "{search}"
+          No posts found matching your filters
         </p>
       )}
 
