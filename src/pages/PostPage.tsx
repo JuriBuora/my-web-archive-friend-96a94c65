@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
+import BlogFooter from "@/components/BlogFooter";
 import { posts, labs, type Post } from "@/data/posts";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucide-react";
 import TableOfContents from "@/components/TableOfContents";
