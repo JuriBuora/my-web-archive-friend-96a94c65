@@ -6,7 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import { posts, labs, type Post } from "@/data/posts";
-import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucide-react";
 import TableOfContents from "@/components/TableOfContents";
 
 const PostPage = () => {
@@ -95,6 +95,12 @@ const PostPage = () => {
       });
     }
   }, [content, contentType, loading]);
+  const readingTime = useMemo(() => {
+    if (!content) return null;
+    const text = content.replace(/<[^>]*>/g, "").replace(/[#*`~\[\]()>_-]/g, "");
+    const words = text.trim().split(/\s+/).length;
+    return Math.max(1, Math.ceil(words / 200));
+  }, [content]);
 
   if (!post) {
     return (
@@ -144,6 +150,12 @@ const PostPage = () => {
               <Calendar className="w-3 h-3" />
               {formattedDate}
             </span>
+            {readingTime && (
+              <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                <Clock className="w-3 h-3" />
+                {readingTime} min read
+              </span>
+            )}
           </div>
           <h1 className="text-2xl md:text-4xl font-bold text-foreground leading-tight mb-4">
             {post.title}
