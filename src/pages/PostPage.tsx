@@ -129,6 +129,7 @@ const PostPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <BlogHeader />
+      <ScrollToTop />
 
       <div className="container mx-auto px-4 py-12 flex gap-8 max-w-5xl">
         <article className="min-w-0 flex-1 max-w-3xl">
