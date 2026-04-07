@@ -264,11 +264,7 @@ const PostPage = () => {
 
         <TableOfContents contentReady={!loading && !error && !!content} />
       </div>
-      <footer className="border-t border-border py-8 text-center">
-        <p className="font-mono text-xs text-muted-foreground">
-          © 2026 Juri Buora · From Zero to Cybersecurity
-        </p>
-      </footer>
+      <BlogFooter />
     </div>
   );
 };
