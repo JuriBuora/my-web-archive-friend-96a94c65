@@ -8,6 +8,7 @@ import AboutSection from "@/components/AboutSection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <ScrollToTop />
       <BlogHeader />
       <HeroSection />
       <ProgressTimeline />
