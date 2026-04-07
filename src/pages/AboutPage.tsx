@@ -21,8 +21,8 @@ const certifications = [
 const milestones = [
   { number: "59", label: "Days Logged" },
   { number: "4", label: "Labs Completed" },
-  { number: "100", label: "Day Goal" },
-  { number: "59%", label: "Progress" },
+  { number: "240", label: "Day Goal" },
+  { number: "25%", label: "Progress" },
 ];
 
 const AboutPage = () => {

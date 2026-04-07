@@ -52,9 +52,9 @@ const ProgressTimeline = () => {
           <span>Day 1</span>
           <span className="text-primary">{totalDays} days logged</span>
         </div>
-        <Progress value={(totalDays / 100) * 100} className="h-2" />
+        <Progress value={(totalDays / 240) * 100} className="h-2" />
         <p className="font-mono text-[11px] text-muted-foreground mt-1">
-          {totalDays}% toward 100-day goal
+          {Math.round((totalDays / 240) * 100)}% toward 240-day goal
         </p>
       </div>
 
@@ -64,7 +64,7 @@ const ProgressTimeline = () => {
           Activity Grid
         </h3>
         <div className="flex flex-wrap gap-[3px]">
-          {Array.from({ length: 100 }, (_, i) => {
+          {Array.from({ length: 240 }, (_, i) => {
             const day = i + 1;
             const post = sortedPosts.find((p) => p.day === day);
             const isActive = !!post;
