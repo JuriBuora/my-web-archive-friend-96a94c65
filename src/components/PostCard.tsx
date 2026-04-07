@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import type { Post } from "@/data/posts";
 
-const PostCard = ({ post }: { post: Post }) => {
+const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string) => void }) => {
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
@@ -28,12 +28,18 @@ const PostCard = ({ post }: { post: Post }) => {
           </h3>
           <div className="flex flex-wrap gap-1.5 mt-2">
             {post.tags.map((tag) => (
-              <span
+              <button
                 key={tag}
-                className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground"
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  onTagClick?.(tag);
+                }}
+                className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground hover:bg-primary/20 hover:text-primary transition-colors"
               >
                 {tag}
-              </span>
+              </button>
             ))}
           </div>
         </div>
