@@ -64,7 +64,7 @@ const ProgressTimeline = () => {
           Activity Grid
         </h3>
         <div className="flex flex-wrap gap-[3px]">
-          {Array.from({ length: 100 }, (_, i) => {
+          {Array.from({ length: 240 }, (_, i) => {
             const day = i + 1;
             const post = sortedPosts.find((p) => p.day === day);
             const isActive = !!post;
