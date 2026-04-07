@@ -7,6 +7,7 @@ import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import { posts, labs, type Post } from "@/data/posts";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react";
+import TableOfContents from "@/components/TableOfContents";
 
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
@@ -122,7 +123,8 @@ const PostPage = () => {
     <div className="min-h-screen bg-background">
       <BlogHeader />
 
-      <article className="container mx-auto px-4 py-12 max-w-3xl">
+      <div className="container mx-auto px-4 py-12 flex gap-8 max-w-5xl">
+        <article className="min-w-0 flex-1 max-w-3xl">
         {/* Breadcrumb */}
         <Link
           to="/"
@@ -239,8 +241,10 @@ const PostPage = () => {
             <div className="flex-1" />
           )}
         </nav>
-      </article>
+        </article>
 
+        <TableOfContents contentReady={!loading && !error && !!content} />
+      </div>
       <footer className="border-t border-border py-8 text-center">
         <p className="font-mono text-xs text-muted-foreground">
           © 2026 Juri Buora · From Zero to Cybersecurity
