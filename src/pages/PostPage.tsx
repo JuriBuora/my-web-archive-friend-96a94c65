@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
   const [content, setContent] = useState<string | null>(null);
+  const [contentType, setContentType] = useState<"markdown" | "html">("markdown");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
@@ -43,6 +44,7 @@ const PostPage = () => {
     const folder = post.category === "lab" ? "Labs" : "Blog";
     const rawUrl = `https://raw.githubusercontent.com/JuriBuora/JuriBuora.github.io/main/${folder}/_posts/${dateParts[0]}-${dateParts[1]}-${dateParts[2]}-${fileName}.md`;
 
+    // Try raw markdown from GitHub first
     fetch(rawUrl)
       .then((res) => {
         if (!res.ok) throw new Error("Not found");
@@ -50,13 +52,33 @@ const PostPage = () => {
       })
       .then((text) => {
         const stripped = text.replace(/^---[\s\S]*?---\n*/m, "");
+        setContentType("markdown");
         setContent(stripped);
         setLoading(false);
       })
       .catch(() => {
-        setContent(null);
-        setLoading(false);
-        setError(true);
+        // Fall back to the live Jekyll site HTML
+        fetch(post.url)
+          .then((res) => {
+            if (!res.ok) throw new Error("Not found");
+            return res.text();
+          })
+          .then((html) => {
+            // Extract the post-content div
+            const match = html.match(/<div class="post-content[^"]*"[^>]*>([\s\S]*?)<\/div>\s*(?:<\/article>|<a class)/);
+            if (match) {
+              setContentType("html");
+              setContent(match[1].trim());
+              setLoading(false);
+            } else {
+              throw new Error("Could not extract content");
+            }
+          })
+          .catch(() => {
+            setContent(null);
+            setLoading(false);
+            setError(true);
+          });
       });
   }, [post]);
 
@@ -160,7 +182,11 @@ const PostPage = () => {
           )}
           {!loading && !error && content && (
             <div className="prose prose-invert prose-sm max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-card-foreground prose-a:text-primary hover:prose-a:underline prose-strong:text-foreground prose-code:text-primary prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:before:content-none prose-code:after:content-none prose-pre:bg-secondary prose-pre:border prose-pre:border-border prose-pre:rounded-lg prose-li:text-card-foreground prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground prose-img:rounded-lg prose-hr:border-border">
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+              {contentType === "markdown" ? (
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+              ) : (
+                <div dangerouslySetInnerHTML={{ __html: content }} />
+              )}
             </div>
           )}
         </div>
