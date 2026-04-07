@@ -6,7 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import { posts, labs, type Post } from "@/data/posts";
-import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucide-react";
 import TableOfContents from "@/components/TableOfContents";
 
 const PostPage = () => {
