@@ -69,21 +69,20 @@ const ProgressTimeline = () => {
             const day = i + 1;
             const post = sortedPosts.find((p) => p.day === day);
             const isActive = !!post;
-            return (
-              <a
+            return isActive ? (
+              <Link
                 key={day}
-                href={post?.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                onMouseEnter={() => isActive && setHoveredDay(day)}
+                to={`/${post.category}/${post.day}`}
+                onMouseEnter={() => setHoveredDay(day)}
                 onMouseLeave={() => setHoveredDay(null)}
-                className={`aspect-square rounded-[2px] transition-all duration-200 ${
-                  isActive
-                    ? "bg-primary hover:bg-primary/80 hover:scale-150 cursor-pointer"
-                    : "bg-secondary cursor-default"
-                }`}
-                onClick={(e) => !isActive && e.preventDefault()}
-                title={post ? `Day ${day}: ${post.title}` : `Day ${day}: upcoming`}
+                className="aspect-square rounded-[2px] transition-all duration-200 bg-primary hover:bg-primary/80 hover:scale-150 cursor-pointer"
+                title={`Day ${day}: ${post.title}`}
+              />
+            ) : (
+              <div
+                key={day}
+                className="aspect-square rounded-[2px] bg-secondary"
+                title={`Day ${day}: upcoming`}
               />
             );
           })}
