@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { useMemo, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import { posts, labs, type Post } from "@/data/posts";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag } from "lucide-react";
@@ -81,6 +83,17 @@ const PostPage = () => {
           });
       });
   }, [post]);
+
+  // Apply highlight.js to HTML content code blocks
+  useEffect(() => {
+    if (contentType === "html" && content && !loading) {
+      import("highlight.js/lib/common").then((hljs) => {
+        document.querySelectorAll("div.prose pre code").forEach((el) => {
+          hljs.default.highlightElement(el as HTMLElement);
+        });
+      });
+    }
+  }, [content, contentType, loading]);
 
   if (!post) {
     return (
@@ -183,7 +196,7 @@ const PostPage = () => {
           {!loading && !error && content && (
             <div className="prose prose-invert prose-sm max-w-none prose-headings:text-foreground prose-headings:font-semibold prose-p:text-card-foreground prose-a:text-primary hover:prose-a:underline prose-strong:text-foreground prose-code:text-primary prose-code:bg-secondary prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:before:content-none prose-code:after:content-none prose-pre:bg-secondary prose-pre:border prose-pre:border-border prose-pre:rounded-lg prose-li:text-card-foreground prose-blockquote:border-primary/30 prose-blockquote:text-muted-foreground prose-img:rounded-lg prose-hr:border-border">
               {contentType === "markdown" ? (
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>{content}</ReactMarkdown>
               ) : (
                 <div dangerouslySetInnerHTML={{ __html: content }} />
               )}
