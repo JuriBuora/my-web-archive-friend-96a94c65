@@ -1,5 +1,6 @@
 import BlogHeader from "@/components/BlogHeader";
 import HeroSection from "@/components/HeroSection";
+import ProgressTimeline from "@/components/ProgressTimeline";
 import PostList from "@/components/PostList";
 import AboutSection from "@/components/AboutSection";
 
