@@ -1,4 +1,5 @@
-import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import type { Post } from "@/data/posts";
 
 const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string) => void }) => {
@@ -9,10 +10,8 @@ const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string)
   });
 
   return (
-    <a
-      href={post.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      to={`/${post.category}/${post.day}`}
       className="group block border border-border rounded-lg p-4 transition-all duration-300 hover:border-primary/50 hover:border-glow bg-card"
     >
       <div className="flex items-start justify-between gap-3">
@@ -43,9 +42,9 @@ const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string)
             ))}
           </div>
         </div>
-        <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
+        <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
       </div>
-    </a>
+    </Link>
   );
 };
 

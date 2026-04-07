@@ -1,15 +1,16 @@
 import { Shield, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BlogHeader = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="container mx-auto flex items-center justify-between h-14 px-4">
-        <div className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <Shield className="w-5 h-5 text-primary" />
           <span className="font-mono text-sm font-semibold text-foreground">
             juri<span className="text-primary">@</span>security
           </span>
-        </div>
+        </Link>
         <a
           href="https://github.com/JuriBuora/JuriBuora.github.io"
           target="_blank"
