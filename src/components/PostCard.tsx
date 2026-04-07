@@ -42,7 +42,7 @@ const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string)
             ))}
           </div>
         </div>
-        <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
+        <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
       </div>
     </a>
   );
