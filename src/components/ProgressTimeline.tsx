@@ -63,7 +63,7 @@ const ProgressTimeline = () => {
         <h3 className="font-mono text-[11px] text-muted-foreground mb-3 uppercase tracking-wider">
           Activity Grid
         </h3>
-        <div className="flex flex-wrap gap-[3px]">
+        <div className="grid gap-[2px]" style={{ gridTemplateColumns: 'repeat(30, 1fr)' }}>
           {Array.from({ length: 240 }, (_, i) => {
             const day = i + 1;
             const post = sortedPosts.find((p) => p.day === day);
@@ -76,7 +76,7 @@ const ProgressTimeline = () => {
                 rel="noopener noreferrer"
                 onMouseEnter={() => isActive && setHoveredDay(day)}
                 onMouseLeave={() => setHoveredDay(null)}
-                className={`w-[10px] h-[10px] rounded-[2px] transition-all duration-200 ${
+                className={`aspect-square rounded-[2px] transition-all duration-200 ${
                   isActive
                     ? "bg-primary hover:bg-primary/80 hover:scale-150 cursor-pointer"
                     : "bg-secondary cursor-default"
