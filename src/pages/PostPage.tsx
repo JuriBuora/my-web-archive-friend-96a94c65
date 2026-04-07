@@ -95,6 +95,7 @@ const PostPage = () => {
     }
   }, [content, contentType, loading]);
 
+  if (!post) {
     return (
       <div className="min-h-screen bg-background">
         <BlogHeader />
