@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import type { Post } from "@/data/posts";
 
-const PostCard = ({ post }: { post: Post }) => {
+const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string) => void }) => {
   const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
