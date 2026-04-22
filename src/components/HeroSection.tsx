@@ -1,6 +1,19 @@
 import heroBg from "@/assets/hero-bg.jpg";
+import { usePosts } from "@/hooks/usePosts";
+
+const formatRange = (dates: string[]) => {
+  if (dates.length === 0) return "";
+  const sorted = [...dates].sort();
+  const fmt = (d: string) =>
+    new Date(d).toLocaleDateString("en-US", { month: "short", year: "numeric" });
+  const first = fmt(sorted[0]);
+  const last = fmt(sorted[sorted.length - 1]);
+  return first === last ? first : `${first}–${last}`;
+};
 
 const HeroSection = () => {
+  const { posts, labs } = usePosts();
+  const range = formatRange([...posts, ...labs].map((p) => p.date));
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       <img
@@ -27,9 +40,9 @@ const HeroSection = () => {
           eventually learn to do properly.
         </p>
         <div className="flex flex-wrap gap-3 justify-center font-mono text-sm text-terminal-dim">
-          <span className="border border-border rounded px-3 py-1">59 daily logs</span>
-          <span className="border border-border rounded px-3 py-1">4 labs</span>
-          <span className="border border-border rounded px-3 py-1">Jan–Mar 2026</span>
+          <span className="border border-border rounded px-3 py-1">{posts.length} daily logs</span>
+          <span className="border border-border rounded px-3 py-1">{labs.length} labs</span>
+          {range && <span className="border border-border rounded px-3 py-1">{range}</span>}
         </div>
       </div>
     </section>
