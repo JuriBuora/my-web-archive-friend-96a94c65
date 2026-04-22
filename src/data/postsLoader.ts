@@ -156,7 +156,11 @@ async function fetchFolder(
       const rawTitle = (fm.title as string) || f.name;
       const title = cleanTitle(rawTitle);
 
-      const date = (fm.date as string) || dateFromName;
+      // Prefer front-matter date; fall back to filename date; else today.
+      const date =
+        (fm.date as string) ||
+        dateFromName ||
+        new Date().toISOString().slice(0, 10);
 
       let tags: string[] = [];
       if (Array.isArray(fm.tags)) tags = fm.tags;
