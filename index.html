@@ -3,31 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>From Zero to Cybersecurity</title>
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <meta name="description" content="A public, structured, learning log.">
-    <meta name="author" content="Lovable" />
+    <title>From Zero to Cybersecurity — Juri Buora</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="https://juribuora.com/" />
+    <meta name="description" content="A public, structured learning log documenting Juri Buora's journey from zero to cybersecurity — daily logs, hands-on labs, and honest notes." />
+    <meta name="author" content="Juri Buora" />
+    <meta name="theme-color" content="#0a0a0a" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    
-    
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6d6d9dcd-11be-4c07-8524-464b6093126a/id-preview-7dbee062--bf7c4e60-625e-4156-b4f2-24dbdd01d9fd.lovable.app-1775598440139.png">
+    <meta property="og:url" content="https://juribuora.com/" />
+    <meta property="og:title" content="From Zero to Cybersecurity — Juri Buora" />
+    <meta property="og:description" content="A public, structured learning log: daily logs, hands-on labs, and honest notes on the journey into cybersecurity." />
+    <meta property="og:image" content="https://juribuora.com/og-image.png" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6d6d9dcd-11be-4c07-8524-464b6093126a/id-preview-7dbee062--bf7c4e60-625e-4156-b4f2-24dbdd01d9fd.lovable.app-1775598440139.png">
-    
-  
-  
-  
-  <meta property="og:title" content="From Zero to Cybersecurity">
-  <meta name="twitter:title" content="From Zero to Cybersecurity">
-  <meta property="og:description" content="A public, structured, learning log.">
-  <meta name="twitter:description" content="A public, structured, learning log.">
-</head>
+    <meta name="twitter:site" content="@JBuora" />
+    <meta name="twitter:creator" content="@JBuora" />
+    <meta name="twitter:title" content="From Zero to Cybersecurity — Juri Buora" />
+    <meta name="twitter:description" content="A public, structured learning log: daily logs, hands-on labs, and honest notes on the journey into cybersecurity." />
+    <meta name="twitter:image" content="https://juribuora.com/og-image.png" />
 
+    <!-- GitHub Pages SPA redirect (paired with public/404.html) -->
+    <script>
+      (function () {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
+  </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
