@@ -133,22 +133,24 @@ async function fetchFolder(
   if (!res.ok) throw new Error(`GitHub API ${res.status} for ${folder}`);
   const files: GhFile[] = await res.json();
 
-  const mdFiles = files.filter((f) => f.type === "file" && f.name.endsWith(".md"));
+  const mdFiles = files.filter(
+    (f) => f.type === "file" && /\.(md|markdown)$/i.test(f.name),
+  );
 
   const results = await Promise.all(
     mdFiles.map(async (f): Promise<Post | null> => {
-      const fmMatch = f.name.match(FILENAME_RE);
-      if (!fmMatch) return null;
-      const [, y, mo, d] = fmMatch;
-      const dateFromName = `${y}-${mo}-${d}`;
+      // Try dated pattern first; fall back to undated for shorthand names.
+      const dated = f.name.match(DATED_FILENAME_RE);
+      const undated = f.name.match(UNDATED_FILENAME_RE);
+      if (!dated && !undated) return null;
+      const dateFromName = dated ? `${dated[1]}-${dated[2]}-${dated[3]}` : "";
 
-      // Fetch only first ~2KB to read front-matter cheaply.
       const mdRes = await fetch(rawUrl(f.path));
       if (!mdRes.ok) return null;
       const text = await mdRes.text();
       const fm = parseFrontMatter(text);
 
-      const day = deriveDay(f.name, category);
+      const day = deriveDay(f.name, fm, category);
       if (day === null) return null;
 
       const rawTitle = (fm.title as string) || f.name;
