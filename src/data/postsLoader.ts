@@ -8,10 +8,30 @@ import { posts as fallbackPosts, labs as fallbackLabs, type Post } from "./posts
 
 type GhFile = { name: string; path: string; type: string };
 
-// Filename like "2026-03-31-day-59.md" or "2026-02-05-lab-01_day-14.md"
-const FILENAME_RE = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.md$/;
-const DAY_RE = /day[-_]?(\d{1,4})/i;
-const LAB_RE = /^lab[-_]?(\d{1,4})/i;
+// Accepted filename patterns (in order of preference):
+//   2026-03-31-day-59.md            ← Jekyll-standard, dated
+//   2026-02-05-lab-01_day-14.md     ← lab + day combo
+//   day-59.md / day_59.md / day59.md  ← undated shorthand
+//   lab-01.md / lab_1.md / lab1.md
+//   59-something.md                 ← bare leading number
+// Markdown extensions accepted: .md, .markdown
+const DATED_FILENAME_RE = /^(\d{4})-(\d{2})-(\d{2})-(.+)\.(?:md|markdown)$/i;
+const UNDATED_FILENAME_RE = /^(.+)\.(?:md|markdown)$/i;
+
+// Day/lab number patterns — tolerate "day 59", "day-59", "day_59", "day59",
+// "d59", "#59", or a bare leading number.
+const DAY_PATTERNS: RegExp[] = [
+  /\bday[\s\-_]*0*(\d{1,4})\b/i,
+  /\bd0*(\d{1,4})\b/i,
+  /#0*(\d{1,4})\b/,
+  /^0*(\d{1,4})[\-_\s]/, // leading "59-..." / "59_..."
+];
+const LAB_PATTERNS: RegExp[] = [
+  /\blab[\s\-_]*0*(\d{1,4})\b/i,
+  /\bl0*(\d{1,4})\b/i,
+  /#0*(\d{1,4})\b/,
+  /^0*(\d{1,4})[\-_\s]/,
+];
 
 // Minimal YAML-ish front-matter extractor for the fields we care about.
 // Handles: title, date, categories, and tags (inline [a, b] or block list).
@@ -57,19 +77,39 @@ function cleanTitle(raw: string): string {
     .trim();
 }
 
-function deriveDay(filename: string, category: "blog" | "lab"): number | null {
-  // For labs prefer the lab number; for blog use the day number.
-  const stem = filename.replace(/\.md$/, "");
-  if (category === "lab") {
-    const lab = stem.match(LAB_RE);
-    if (lab) return Number(lab[1]);
-    const day = stem.match(DAY_RE);
-    if (day) return Number(day[1]);
-  } else {
-    const day = stem.match(DAY_RE);
-    if (day) return Number(day[1]);
+function firstMatch(patterns: RegExp[], stem: string): number | null {
+  for (const re of patterns) {
+    const m = stem.match(re);
+    if (m) {
+      const n = Number(m[1]);
+      if (Number.isFinite(n) && n > 0) return n;
+    }
   }
   return null;
+}
+
+function deriveDay(
+  filename: string,
+  frontMatter: Record<string, string | string[]>,
+  category: "blog" | "lab",
+): number | null {
+  // 1) Front-matter wins if it specifies an explicit number.
+  const fmKey = category === "lab" ? "lab" : "day";
+  const fmVal = frontMatter[fmKey] ?? frontMatter.number ?? frontMatter.order;
+  if (typeof fmVal === "string") {
+    const n = parseInt(fmVal, 10);
+    if (Number.isFinite(n) && n > 0) return n;
+  }
+
+  // 2) Strip date prefix and extension before pattern-matching.
+  const stem = filename
+    .replace(/\.(?:md|markdown)$/i, "")
+    .replace(/^\d{4}-\d{2}-\d{2}-/, "");
+
+  if (category === "lab") {
+    return firstMatch(LAB_PATTERNS, stem) ?? firstMatch(DAY_PATTERNS, stem);
+  }
+  return firstMatch(DAY_PATTERNS, stem);
 }
 
 function jekyllUrlFor(
@@ -78,7 +118,9 @@ function jekyllUrlFor(
   urlPrefix: string,
 ): string {
   const [y, m, d] = date.split("-");
-  const slug = filename.replace(/\.md$/, "").replace(/^\d{4}-\d{2}-\d{2}-/, "");
+  const slug = filename
+    .replace(/\.(?:md|markdown)$/i, "")
+    .replace(/^\d{4}-\d{2}-\d{2}-/, "");
   return `${JEKYLL_SITE}/${urlPrefix}/${y}/${m}/${d}/${slug}.html`;
 }
 
