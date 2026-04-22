@@ -6,7 +6,9 @@ import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github-dark.css";
 import BlogHeader from "@/components/BlogHeader";
 import BlogFooter from "@/components/BlogFooter";
-import { posts, labs, type Post } from "@/data/posts";
+import { type Post } from "@/data/posts";
+import { usePosts } from "@/hooks/usePosts";
+import { JEKYLL_REPO, JEKYLL_BRANCH } from "@/data/jekyllSource";
 import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucide-react";
 import TableOfContents from "@/components/TableOfContents";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -14,12 +16,16 @@ import useCodeCopyButtons from "@/hooks/useCodeCopyButtons";
 
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
+  const { posts, labs } = usePosts();
   const [content, setContent] = useState<string | null>(null);
   const [contentType, setContentType] = useState<"markdown" | "html">("markdown");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const allPosts = useMemo(() => [...posts, ...labs].sort((a, b) => a.day - b.day), []);
+  const allPosts = useMemo(
+    () => [...posts, ...labs].sort((a, b) => a.day - b.day),
+    [posts, labs]
+  );
 
   const post = useMemo(() => {
     const d = Number(day);
@@ -42,13 +48,13 @@ const PostPage = () => {
     setLoading(true);
     setError(false);
 
-    const dateParts = post.date.split("-");
-    const fileName = post.category === "lab"
-      ? `lab-${String(post.day).padStart(2, "0")}`
-      : `day-${String(post.day).padStart(2, "0")}`;
-
+    // Derive the markdown filename from the live Jekyll URL stored on the post.
+    // post.url looks like ".../blog/2026/03/31/day-59.html"
+    const m = post.url.match(/\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+?)\.html?$/);
     const folder = post.category === "lab" ? "Labs" : "Blog";
-    const rawUrl = `https://raw.githubusercontent.com/JuriBuora/JuriBuora.github.io/main/${folder}/_posts/${dateParts[0]}-${dateParts[1]}-${dateParts[2]}-${fileName}.md`;
+    const rawUrl = m
+      ? `https://raw.githubusercontent.com/${JEKYLL_REPO}/${JEKYLL_BRANCH}/${folder}/_posts/${m[1]}-${m[2]}-${m[3]}-${m[4]}.md`
+      : "";
 
     // Try raw markdown from GitHub first
     fetch(rawUrl)

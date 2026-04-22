@@ -1,14 +1,15 @@
 import { useState, useMemo } from "react";
-import { posts, labs, allTags } from "@/data/posts";
+import { usePosts } from "@/hooks/usePosts";
 import PostCard from "./PostCard";
 import { Search, X } from "lucide-react";
 
 const PostList = () => {
+  const { posts, labs, allTags, loading } = usePosts();
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState<"all" | "blog" | "lab">("all");
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
 
-  const allPosts = useMemo(() => [...posts, ...labs], []);
+  const allPosts = useMemo(() => [...posts, ...labs], [posts, labs]);
 
   const toggleTag = (tag: string) => {
     setActiveTags((prev) => {
@@ -104,7 +105,7 @@ const PostList = () => {
         )}
       </div>
 
-      {grouped.length === 0 && (
+      {grouped.length === 0 && !loading && (
         <p className="text-center text-muted-foreground py-12 font-mono text-sm">
           No posts found matching your filters
         </p>
