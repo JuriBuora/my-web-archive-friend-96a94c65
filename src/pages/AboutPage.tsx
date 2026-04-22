@@ -1,7 +1,10 @@
 import BlogHeader from "@/components/BlogHeader";
 import BlogFooter from "@/components/BlogFooter";
 import ScrollToTop from "@/components/ScrollToTop";
-import { Shield, Target, BookOpen, Terminal, Award, ExternalLink, Download } from "lucide-react";
+import { Shield, Target, BookOpen, Terminal, ExternalLink } from "lucide-react";
+import { usePosts } from "@/hooks/usePosts";
+
+const GOAL_DAYS = 240;
 
 const skills = [
   { category: "Networking", items: ["TCP/IP", "DNS", "HTTP/S", "Wireshark", "Nmap"] },
@@ -18,14 +21,14 @@ const certifications = [
   { name: "Google Cybersecurity Certificate", status: "Planned", icon: "📋" },
 ];
 
-const milestones = [
-  { number: "59", label: "Days Logged" },
-  { number: "4", label: "Labs Completed" },
-  { number: "240", label: "Day Goal" },
-  { number: "25%", label: "Progress" },
-];
-
 const AboutPage = () => {
+  const { posts, labs } = usePosts();
+  const milestones = [
+    { number: String(posts.length), label: "Days Logged" },
+    { number: String(labs.length), label: "Labs Completed" },
+    { number: String(GOAL_DAYS), label: "Day Goal" },
+    { number: `${Math.round((posts.length / GOAL_DAYS) * 100)}%`, label: "Progress" },
+  ];
   return (
     <div className="min-h-screen bg-background">
       <ScrollToTop />
