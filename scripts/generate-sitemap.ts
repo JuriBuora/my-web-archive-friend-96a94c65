@@ -12,7 +12,7 @@
  * fetch fails (rate-limit, offline build), it still emits a minimal sitemap
  * with the static routes so the build never breaks.
  */
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const SITE = "https://juribuora.com";
@@ -121,6 +121,7 @@ export async function generateSitemap(outDir: string): Promise<void> {
   }
 
   const xml = renderXml([...staticEntries, ...postEntries]);
+  await mkdir(outDir, { recursive: true });
   const target = path.join(outDir, "sitemap.xml");
   await writeFile(target, xml, "utf8");
   // eslint-disable-next-line no-console
