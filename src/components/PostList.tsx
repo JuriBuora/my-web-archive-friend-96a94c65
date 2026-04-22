@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { usePosts } from "@/hooks/usePosts";
 import PostCard from "./PostCard";
-import { Search, X } from "lucide-react";
+import { Search, X, Loader2 } from "lucide-react";
 
 const PostList = () => {
   const { posts, labs, allTags, loading } = usePosts();
@@ -78,6 +78,18 @@ const PostList = () => {
           ))}
         </div>
       </div>
+
+      {/* Live-fetch indicator */}
+      {loading && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="flex items-center gap-2 mb-4 font-mono text-[11px] text-terminal-dim"
+        >
+          <Loader2 className="w-3 h-3 animate-spin text-primary" />
+          <span>Syncing latest posts from GitHub…</span>
+        </div>
+      )}
 
       {/* Tag filter chips */}
       <div className="flex flex-wrap gap-1.5 mb-8">
