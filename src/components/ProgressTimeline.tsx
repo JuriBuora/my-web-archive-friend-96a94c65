@@ -1,14 +1,17 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { posts } from "@/data/posts";
+import { usePosts } from "@/hooks/usePosts";
 import { Progress } from "@/components/ui/progress";
 
+const GOAL_DAYS = 240;
+
 const ProgressTimeline = () => {
+  const { posts } = usePosts();
   const [hoveredDay, setHoveredDay] = useState<number | null>(null);
 
   const sortedPosts = useMemo(
     () => [...posts].sort((a, b) => a.day - b.day),
-    []
+    [posts]
   );
 
   const totalDays = sortedPosts.length;
@@ -53,9 +56,9 @@ const ProgressTimeline = () => {
           <span>Day 1</span>
           <span className="text-primary">{totalDays} days logged</span>
         </div>
-        <Progress value={(totalDays / 240) * 100} className="h-2" />
+        <Progress value={(totalDays / GOAL_DAYS) * 100} className="h-2" />
         <p className="font-mono text-[11px] text-muted-foreground mt-1">
-          {Math.round((totalDays / 240) * 100)}% toward 240-day goal
+          {Math.round((totalDays / GOAL_DAYS) * 100)}% toward {GOAL_DAYS}-day goal
         </p>
       </div>
 
@@ -65,7 +68,7 @@ const ProgressTimeline = () => {
           Activity Grid
         </h3>
         <div className="grid gap-[2px]" style={{ gridTemplateColumns: 'repeat(30, 1fr)' }}>
-          {Array.from({ length: 240 }, (_, i) => {
+          {Array.from({ length: GOAL_DAYS }, (_, i) => {
             const day = i + 1;
             const post = sortedPosts.find((p) => p.day === day);
             const isActive = !!post;
