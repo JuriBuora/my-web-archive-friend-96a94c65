@@ -1,11 +1,12 @@
 import heroBg from "@/assets/hero-bg.jpg";
 import { usePosts } from "@/hooks/usePosts";
+import { formatPostDate } from "@/lib/postDates";
 
 const formatRange = (dates: string[]) => {
   if (dates.length === 0) return "";
   const sorted = [...dates].sort();
   const fmt = (d: string) =>
-    new Date(d).toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    formatPostDate(d, { month: "short", year: "numeric" });
   const first = fmt(sorted[0]);
   const last = fmt(sorted[sorted.length - 1]);
   return first === last ? first : `${first}–${last}`;

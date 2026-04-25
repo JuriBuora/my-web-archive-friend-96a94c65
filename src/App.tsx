@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 const Index = lazy(() => import("./pages/Index.tsx"));
 const PostPage = lazy(() => import("./pages/PostPage.tsx"));
 const AboutPage = lazy(() => import("./pages/AboutPage.tsx"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/:collection" element={<CategoryPage />} />
               <Route path="/:category/:day" element={<PostPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

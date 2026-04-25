@@ -564,8 +564,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 25,
       "title": "Effective Shell Fundamentals: ls, du, man, Heredocs, Updates, and Docker Permissions",
-      "date": "2026-02-18 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/18 00:00:00 +0100/day-25.html",
+      "date": "2026-02-18",
+      "url": "https://juribuora.github.io/blog/2026/02/18/day-25.html",
       "category": "blog",
       "tags": [
         "cybersecurity",
@@ -585,8 +585,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 24,
       "title": "Tools Lane Setup, Effective Shell, and Shutdown Triage",
-      "date": "2026-02-17 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/17 00:00:00 +0100/day-24.html",
+      "date": "2026-02-17",
+      "url": "https://juribuora.github.io/blog/2026/02/17/day-24.html",
       "category": "blog",
       "tags": [
         "linuxfundamentals",
@@ -604,8 +604,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 23,
       "title": "Consolidation, Repetition, and Anki-Driven Recall",
-      "date": "2026-02-15 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/15 00:00:00 +0100/day-23.html",
+      "date": "2026-02-15",
+      "url": "https://juribuora.github.io/blog/2026/02/15/day-23.html",
       "category": "blog",
       "tags": [
         "linuxfundamentals",
@@ -620,8 +620,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 22,
       "title": "stdout, stderr, wget, and Output Validation",
-      "date": "2026-02-14 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/14 00:00:00 +0100/day-22.html",
+      "date": "2026-02-14",
+      "url": "https://juribuora.github.io/blog/2026/02/14/day-22.html",
       "category": "blog",
       "tags": [
         "linuxfundamentals",
@@ -636,8 +636,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 21,
       "title": "Building My Detection Engineering Repo + Hardening My Blog Setup",
-      "date": "2026-02-13 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/13 00:00:00 +0100/day-21.html",
+      "date": "2026-02-13",
+      "url": "https://juribuora.github.io/blog/2026/02/13/day-21.html",
       "category": "blog",
       "tags": [
         "cybersecurity",
@@ -656,8 +656,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 20,
       "title": "Auditing a Media Archive and Taking Control of Backups",
-      "date": "2026-02-12 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/12 00:00:00 +0100/day-20.html",
+      "date": "2026-02-12",
+      "url": "https://juribuora.github.io/blog/2026/02/12/day-20.html",
       "category": "blog",
       "tags": [
         "commandline",
@@ -674,8 +674,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 19,
       "title": "Bare-Metal Dual Boot on Intel Mac (macOS + Ubuntu Server)",
-      "date": "2026-02-11 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/11 00:00:00 +0100/day-19.html",
+      "date": "2026-02-11",
+      "url": "https://juribuora.github.io/blog/2026/02/11/day-19.html",
       "category": "blog",
       "tags": [
         "linux",
@@ -693,8 +693,8 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 18,
       "title": "Intel Mac Dual-Boot Experiments, Architecture Friction, and Lab Prep",
-      "date": "2026-02-10 00:00:00 +0100",
-      "url": "https://juribuora.github.io/blog/2026/02/10 00:00:00 +0100/day-18.html",
+      "date": "2026-02-10",
+      "url": "https://juribuora.github.io/blog/2026/02/10/day-18.html",
       "category": "blog",
       "tags": [
         "linux",
@@ -1092,10 +1092,19 @@ export const jekyllSnapshot: LoadedPosts = {
     {
       "day": 1,
       "title": "Linux Permissions & Ownership Hands-On Practice",
-      "date": "2026-02-05 15:11:01",
-      "url": "https://juribuora.github.io/labs/2026/02/05 15:11:01/lab-01_day-14.html",
+      "date": "2026-02-05",
+      "url": "https://juribuora.github.io/labs/2026/02/05/lab-01_day-14.html",
       "category": "lab",
-      "tags": [],
+      "tags": [
+        "linuxfundamentals",
+        "linux",
+        "commandline",
+        "permissions",
+        "filesystem",
+        "cybersecurity",
+        "labs",
+        "learningprocess"
+      ],
       "slug": "lab-01_day-14",
       "sourcePath": "Labs/_posts/2026-02-05-lab-01_day-14.md",
       "contentPath": "/generated/posts/lab/1.json"

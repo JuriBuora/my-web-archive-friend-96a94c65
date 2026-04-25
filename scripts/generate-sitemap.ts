@@ -28,6 +28,7 @@ type GeneratedManifest = {
 
 type RouteShell = {
   routePath: string;
+  canonicalPath?: string;
   title: string;
   description: string;
 };
@@ -61,11 +62,11 @@ function escapeHtml(value: string): string {
 
 function injectRouteMeta(
   html: string,
-  routePath: string,
+  canonicalPath: string,
   title: string,
   description: string,
 ): string {
-  const url = `${SITE}${routePath}`;
+  const url = `${SITE}${canonicalPath}`;
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeHtml(description);
   return html
@@ -99,6 +100,40 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
 
   const routes: RouteShell[] = [
     {
+      routePath: "/blog",
+      title: "Blog Archive — Juri Buora",
+      description: "Browse daily study logs, notes, and reflections from Juri Buora's cybersecurity journey.",
+    },
+    {
+      routePath: "/Blog",
+      canonicalPath: "/blog",
+      title: "Blog Archive — Juri Buora",
+      description: "Browse daily study logs, notes, and reflections from Juri Buora's cybersecurity journey.",
+    },
+    {
+      routePath: "/labs",
+      title: "Lab Archive — Juri Buora",
+      description: "Browse hands-on labs, experiments, and technical practice notes from Juri Buora's cybersecurity journey.",
+    },
+    {
+      routePath: "/Labs",
+      canonicalPath: "/labs",
+      title: "Lab Archive — Juri Buora",
+      description: "Browse hands-on labs, experiments, and technical practice notes from Juri Buora's cybersecurity journey.",
+    },
+    {
+      routePath: "/lab",
+      canonicalPath: "/labs",
+      title: "Lab Archive — Juri Buora",
+      description: "Browse hands-on labs, experiments, and technical practice notes from Juri Buora's cybersecurity journey.",
+    },
+    {
+      routePath: "/Lab",
+      canonicalPath: "/labs",
+      title: "Lab Archive — Juri Buora",
+      description: "Browse hands-on labs, experiments, and technical practice notes from Juri Buora's cybersecurity journey.",
+    },
+    {
       routePath: "/about",
       title: "About — Juri Buora",
       description: "About Juri Buora and the public learning journey behind this cybersecurity log.",
@@ -118,7 +153,7 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
   for (const route of routes) {
     const routeHtml = injectRouteMeta(
       rootHtml,
-      route.routePath,
+      route.canonicalPath ?? route.routePath,
       route.title,
       route.description,
     );
@@ -127,7 +162,6 @@ async function generateRouteShells(outDir: string, manifest: GeneratedManifest):
     await writeFile(target, routeHtml, "utf8");
   }
 
-  // eslint-disable-next-line no-console
   console.log(`[routes] Wrote ${routes.length} static route shells`);
 }
 
@@ -154,6 +188,8 @@ export async function generateSitemap(outDir: string): Promise<void> {
   const today = new Date().toISOString().slice(0, 10);
   const staticEntries: Entry[] = [
     { loc: `${SITE}/`, lastmod: today, changefreq: "weekly", priority: 1.0 },
+    { loc: `${SITE}/blog`, lastmod: today, changefreq: "weekly", priority: 0.9 },
+    { loc: `${SITE}/labs`, lastmod: today, changefreq: "weekly", priority: 0.9 },
     { loc: `${SITE}/about`, lastmod: today, changefreq: "monthly", priority: 0.8 },
   ];
 
@@ -163,10 +199,8 @@ export async function generateSitemap(outDir: string): Promise<void> {
   try {
     manifest = await readManifest();
     mirroredEntries = await readManifestEntries();
-    // eslint-disable-next-line no-console
     console.log(`[sitemap] Indexed ${mirroredEntries.length} mirrored post URLs`);
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.warn(
       "[sitemap] Falling back to static-only sitemap:",
       (error as Error).message,
@@ -182,7 +216,6 @@ export async function generateSitemap(outDir: string): Promise<void> {
     await generateRouteShells(outDir, manifest);
   }
 
-  // eslint-disable-next-line no-console
   console.log(`[sitemap] Wrote ${target} (${staticEntries.length + mirroredEntries.length} URLs)`);
 }
 

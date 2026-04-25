@@ -48,6 +48,12 @@ const BlogFooter = () => {
             <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
               Home
             </Link>
+            <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+              Blog
+            </Link>
+            <Link to="/labs" className="text-muted-foreground hover:text-primary transition-colors">
+              Labs
+            </Link>
             <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
               About
             </Link>

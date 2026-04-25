@@ -101,6 +101,12 @@ function cleanTitle(rawTitle) {
     .trim();
 }
 
+function normalizeDateString(value, fallback = "") {
+  if (typeof value !== "string") return fallback;
+  const match = value.match(/\b(\d{4}-\d{2}-\d{2})\b/);
+  return match ? match[1] : fallback;
+}
+
 function deriveDay(filename, frontMatter, category) {
   const frontMatterKey = category === "lab" ? "lab" : "day";
   const frontMatterValue =
@@ -196,10 +202,10 @@ async function buildSnapshot() {
       ? `${dateFromNameMatch[1]}-${dateFromNameMatch[2]}-${dateFromNameMatch[3]}`
       : "";
 
-    const date =
-      (typeof frontMatter.date === "string" && frontMatter.date) ||
-      dateFromName ||
-      new Date().toISOString().slice(0, 10);
+    const date = normalizeDateString(
+      frontMatter.date,
+      dateFromName || new Date().toISOString().slice(0, 10),
+    );
 
     const slug = filename
       .replace(/\.(?:md|markdown)$/i, "")

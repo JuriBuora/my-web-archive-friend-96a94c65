@@ -12,6 +12,8 @@ import { ArrowLeft, ArrowRight, ExternalLink, Calendar, Tag, Clock } from "lucid
 import TableOfContents from "@/components/TableOfContents";
 import ScrollToTop from "@/components/ScrollToTop";
 import useCodeCopyButtons from "@/hooks/useCodeCopyButtons";
+import { normalizeCollectionSlug } from "@/lib/contentRoutes";
+import { formatPostDate } from "@/lib/postDates";
 
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
@@ -27,7 +29,8 @@ const PostPage = () => {
 
   const post = useMemo(() => {
     const dayNumber = Number(day);
-    const postCategory = category === "lab" ? "lab" : "blog";
+    const postCategory = normalizeCollectionSlug(category);
+    if (!postCategory) return null;
     return allPosts.find((entry) => entry.day === dayNumber && entry.category === postCategory);
   }, [allPosts, category, day]);
 
@@ -97,7 +100,7 @@ const PostPage = () => {
     );
   }
 
-  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+  const formattedDate = formatPostDate(post.date, {
     weekday: "long",
     month: "long",
     day: "numeric",

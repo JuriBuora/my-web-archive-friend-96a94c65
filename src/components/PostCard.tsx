@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import type { Post } from "@/data/posts";
+import { formatPostDate } from "@/lib/postDates";
 
 const PostCard = ({ post, onTagClick }: { post: Post; onTagClick?: (tag: string) => void }) => {
-  const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+  const formattedDate = formatPostDate(post.date, {
     month: "short",
     day: "numeric",
     year: "numeric",

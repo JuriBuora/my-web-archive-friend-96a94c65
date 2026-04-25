@@ -1,8 +1,8 @@
 {
   "day": 22,
   "title": "stdout, stderr, wget, and Output Validation",
-  "date": "2026-02-14 00:00:00 +0100",
-  "url": "https://juribuora.github.io/blog/2026/02/14 00:00:00 +0100/day-22.html",
+  "date": "2026-02-14",
+  "url": "https://juribuora.github.io/blog/2026/02/14/day-22.html",
   "category": "blog",
   "tags": [
     "linuxfundamentals",
