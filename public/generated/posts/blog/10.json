@@ -1,0 +1,21 @@
+{
+  "day": 10,
+  "title": "Linux Fundamentals Part 2 (SSH, Filesystem, Permissions)",
+  "date": "2026-01-30",
+  "url": "https://juribuora.github.io/blog/2026/01/30/day-10.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "linuxfundamentals",
+    "commandline",
+    "bash",
+    "ssh",
+    "filepermissions",
+    "tryhackme",
+    "cybersecurityfoundations"
+  ],
+  "slug": "day-10",
+  "sourcePath": "Blog/_posts/2026-01-30-day-10.md",
+  "content": "## 🎯 Goal\n\nDeepen Linux fundamentals by working with **remote access, filesystem operations, and permissions**, focusing on skills directly transferable to real systems.\n\n---\n\n## ✅ What I Did\n\n### TryHackMe\n\n- Completed **Linux Fundamentals Part 2**\n    \n\n### Remote Access\n\n- Connected to a remote Linux machine using **SSH**\n    \n- Understood SSH as a core skill for administration and pentesting\n    \n\n### Command Line Usage\n\n- Used command **flags and switches** to extend functionality\n    \n- Consulted **`man` pages** and `--help` for self-documentation\n    \n\n### Filesystem Operations\n\n- Created files and directories (`touch`, `mkdir`)\n    \n- Copied and moved files (`cp`, `mv`)\n    \n- Deleted files and folders (`rm`, `rm -R`)\n    \n- Identified file types using `file`\n    \n\n### Permissions & Users\n\n- Learned Linux permission model:\n    \n    - Read / Write / Execute (`rwx`)\n        \n    - Numeric permissions (`755`, `644`, `700`)\n        \n- Explored ownership:\n    \n    - User\n        \n    - Group\n        \n    - Others\n        \n- Switched users with:\n    \n    - `su`\n        \n    - `su -l`\n        \n\n### System Directories\n\n- Reviewed key directories:\n    \n    - `/etc` – configuration and credentials\n        \n    - `/var` – logs and variable data\n        \n    - `/root` – root user home\n        \n    - `/tmp` – writable temporary directory\n        \n\n---\n\n## ✅ What Worked\n\n- SSH usage finally feels practical, not abstract\n    \n- Man pages reduced reliance on copy-pasting commands\n    \n- Numeric permissions started to make sense\n    \n- Filesystem navigation feels more deliberate\n    \n\n---\n\n## ❌ What Didn’t\n\n- `grep` syntax still causes friction\n    \n- `rm -R` is powerful enough to be dangerous\n    \n- Permissions require repetition to become instinctive\n    \n\n---\n\n## 🧠 Key Takeaways\n\n- SSH is foundational to almost everything in Linux security\n    \n- Flags + man pages turn basic commands into powerful tools\n    \n- Linux permissions are a **security boundary**, not just syntax\n    \n- Understanding `/etc` and `/var` is critical for real-world analysis\n    \n- `/tmp` stands out as a frequent point of interest in attacks\n    \n\n---\n\n## ❓ Questions\n\n- When should `su` be preferred over `sudo`?\n    \n- What are the most common real-world permission misconfigurations?\n    \n- How often is `/tmp` abused in actual pentests?\n    \n\n---\n\n## 📚 Resources\n\n- TryHackMe – Linux Fundamentals Part 2  \n    [https://tryhackme.com/room/linuxfundamentalspart2](https://tryhackme.com/room/linuxfundamentalspart2)\n    \n\n---\n\n### Personal Objective (Why This Exists)\n\n- ⬜ Build solid **Linux operational confidence**\n    \n- ⬜ Reduce reliance on copy-paste commands\n    \n- ⬜ Prepare for real-world lab environments\n    \n- ⬜ Strengthen foundations for privilege escalation later\n"
+}

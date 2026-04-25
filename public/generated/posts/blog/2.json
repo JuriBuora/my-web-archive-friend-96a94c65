@@ -1,0 +1,20 @@
+{
+  "day": 2,
+  "title": "Networking & Web Fundamentals (Consolidation Day)",
+  "date": "2026-01-20",
+  "url": "https://juribuora.github.io/blog/2026/01/20/day-02.html",
+  "category": "blog",
+  "tags": [
+    "tryhackme",
+    "networking",
+    "dns",
+    "http",
+    "packets",
+    "obsidian",
+    "parallels",
+    "cybersecurity"
+  ],
+  "slug": "day-02",
+  "sourcePath": "Blog/_posts/2026-01-20-day-02.md",
+  "content": "## 🎯 Goal\nStrengthen foundational understanding of how networks and the web work, while improving my personal knowledge system to support long-term learning.\n\n---\n\n## ✅ What I Did\n\n### Environment & Tooling\n- Explored and learned key features of **Parallels Desktop**:\n  - VM lifecycle management\n  - Snapshots and rollback concepts\n  - Resource allocation basics\n- Set up **Obsidian** for daily use:\n  - Installed and configured productivity plugins\n  - Refined note structure and navigation\n  - Invested time in making the system usable, not just installed\n\n### Study & Practice (TryHackMe)\nCompleted the following rooms:\n- **Packets & Frames**\n- **Extending Your Network**\n- **DNS in Detail**\n- **HTTP in Detail**\n\n---\n\n## ✅ What Worked\n- Parallels features are now less “magic” and more predictable\n- Obsidian is becoming a thinking tool, not a dumping ground\n- Seeing networking topics across multiple rooms reinforced patterns\n- DNS and HTTP concepts started connecting to earlier network knowledge\n\n---\n\n## ❌ What Didn’t\n- Obsidian setup consumed more time than expected\n- Some concepts still feel theoretical without hands-on packet inspection\n- Mental overload from too many related topics in one day\n\n---\n\n## 🧠 Key Takeaways\n- Productivity tools only help once friction is removed\n- Networking concepts make sense when seen as **flows**, not definitions\n- DNS and HTTP are not isolated topics — they sit on top of everything else\n- Repetition across different explanations improves retention\n\n---\n\n## ❓ Questions\n- When should I move from theory-heavy rooms to packet-level analysis?\n- How much Obsidian customization is “enough” before it becomes distraction?\n- What networking concepts must be second nature before touching exploits?\n\n---\n\n## 📚 Resources\n- TryHackMe Learning Paths  \n  https://tryhackme.com/paths\n\n- Rooms completed:\n  - Packets & Frames\n  - Extending Your Network\n  - DNS in Detail\n  - HTTP in Detail\n"
+}

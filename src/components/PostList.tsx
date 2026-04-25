@@ -1,10 +1,10 @@
 import { useState, useMemo } from "react";
 import { usePosts } from "@/hooks/usePosts";
 import PostCard from "./PostCard";
-import { Search, X, Loader2 } from "lucide-react";
+import { Search, X } from "lucide-react";
 
 const PostList = () => {
-  const { posts, labs, allTags, loading } = usePosts();
+  const { posts, labs, allTags } = usePosts();
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState<"all" | "blog" | "lab">("all");
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
@@ -79,18 +79,6 @@ const PostList = () => {
         </div>
       </div>
 
-      {/* Live-fetch indicator */}
-      {loading && (
-        <div
-          role="status"
-          aria-live="polite"
-          className="flex items-center gap-2 mb-4 font-mono text-[11px] text-terminal-dim"
-        >
-          <Loader2 className="w-3 h-3 animate-spin text-primary" />
-          <span>Syncing latest posts from GitHub…</span>
-        </div>
-      )}
-
       {/* Tag filter chips */}
       <div className="flex flex-wrap gap-1.5 mb-8">
         {allTags.map((tag) => (
@@ -117,7 +105,7 @@ const PostList = () => {
         )}
       </div>
 
-      {grouped.length === 0 && !loading && (
+      {grouped.length === 0 && (
         <p className="text-center text-muted-foreground py-12 font-mono text-sm">
           No posts found matching your filters
         </p>

@@ -1,0 +1,18 @@
+{
+  "day": 12,
+  "title": "Linux Files, Permissions, and Safety",
+  "date": "2026-02-02",
+  "url": "https://juribuora.github.io/blog/2026/02/02/day-12.html",
+  "category": "blog",
+  "tags": [
+    "linux",
+    "commandline",
+    "filesystem",
+    "permissions",
+    "logs",
+    "learningprocess"
+  ],
+  "slug": "day-12",
+  "sourcePath": "Blog/_posts/2026-02-02-day-12.md",
+  "content": "## 🎯 Goal\n\nUnderstand how Linux handles files and permissions at a fundamental level, and build safe, repeatable habits around destructive commands and log inspection.\n\n---\n\n## ✅ What I Did\n\n### Files & Directories\n\n- Created directory structures using **brace expansion**\n    \n- Created multiple files at once using `touch` and numeric ranges\n    \n- Practiced navigating with **absolute vs relative paths**\n    \n- Used `pwd` intentionally before running destructive commands\n    \n\n### Permissions & Ownership\n\n- Studied **ownership vs permissions** (user, group, others)\n    \n- Learned how Linux evaluates permissions (owner → group → others)\n    \n- Understood **chmod in octal** as bit math, not memorization\n    \n- Created files with restricted permissions (e.g. `640`, `600`)\n    \n- Explored why **`777` is almost always a bad idea**, and when it is (rarely) acceptable\n    \n- Learned that a file can be **executable but not readable**\n    \n\n### Safety & Destructive Commands\n\n- Broke down `rm -rf *` into its components and risks\n    \n- Understood how shell expansion (`*`) works\n    \n- Learned safer directory cleanup with:\n    \n    ```bash\n    find . -mindepth 1 -delete\n    ```\n    \n- Understood why filenames starting with `-` break commands and how to handle them safely\n    \n\n### Logs & Inspection\n\n- Explored `/var/log` and identified relevant log files\n    \n- Focused on authentication and SSH-related logs\n    \n- Used **grep** and **grep -R** to search log entries\n    \n- Redirected grep output to files for later analysis\n    \n\n---\n\n## ✅ What Worked\n\n- Octal permissions finally clicked once viewed as **bit-level logic**\n    \n- Using absolute paths removed ambiguity and prevented mistakes\n    \n- `find -delete` felt safer and more intentional than `rm -rf *`\n    \n- `grep` proved extremely effective for log inspection\n    \n- Redirecting output made investigations repeatable\n    \n\n---\n\n## ❌ What Didn’t\n\n- Accidentally created files with problematic names (e.g. starting with `-`)\n    \n- Initially confused file ownership with delete permissions\n    \n- Over-trusted relative paths during early experiments\n    \n\n---\n\n## 🧠 Key Takeaways\n\n- Linux permissions are deterministic, not mystical\n    \n- Directories control deletion, not files\n    \n- Ownership selects which rule set applies; permissions define the rules\n    \n- Absolute paths remove dangerous assumptions\n    \n- `777` removes security boundaries instead of fixing problems\n    \n- Logs are the ground truth of system activity\n    \n\n---\n\n## ❓ Questions\n\n- When should `find -delete` be preferred over `rm -rf` in scripts?\n    \n- Which log files matter most first during incident response?\n    \n- At what point do permission misconfigurations become real security vulnerabilities?\n"
+}

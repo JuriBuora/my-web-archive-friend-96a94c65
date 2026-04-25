@@ -1,0 +1,19 @@
+{
+  "day": 5,
+  "title": "Blogging with GitHub Pages (Publishing Foundations)",
+  "date": "2026-01-23",
+  "url": "https://juribuora.github.io/blog/2026/01/23/day-05.html",
+  "category": "blog",
+  "tags": [
+    "githubpages",
+    "jekyll",
+    "blogging",
+    "documentation",
+    "vscode",
+    "github",
+    "learninginpublic"
+  ],
+  "slug": "day-05",
+  "sourcePath": "Blog/_posts/2026-01-23-day-05.md",
+  "content": "## 🎯 Goal\nLearn the basics of publishing a blog using GitHub Pages and understand the tooling behind a static site workflow.\n\n---\n\n## ✅ What I Did\n\n### Learning\n- Watched: **Basics on how to blog with GitHub**  \n  https://www.youtube.com/watch?v=EvYs1idcGnM\n- Learned the core idea behind **GitHub Pages**\n- Understood the role of **static site generators**, specifically Jekyll\n\n### Tooling & Setup\n- Installed required dependencies:\n  - Ruby (v2.7.0 or higher)\n  - RubyGems\n  - GCC and Make\n- Experimented with **Jekyll** locally\n- Used **Visual Studio Code** to work with the project\n- Created my **main GitHub repository**\n- Explored the **clone workflow** to add and manage content via VS Code instead of the GitHub web UI\n\n---\n\n## ✅ What Worked\n- GitHub Pages concept is simple once broken down\n- Local Jekyll setup helped demystify how pages are generated\n- VS Code + Git workflow feels more scalable than web editing\n- Seeing local changes reflected remotely clarified the publishing flow\n\n---\n\n## ❌ What Didn’t\n- Ruby/Jekyll setup felt brittle and not beginner-friendly\n- Toolchain complexity is high compared to the apparent simplicity of the output\n- Still not fully clear what should be automated vs manual in the workflow\n\n---\n\n## 🧠 Key Takeaways\n- GitHub Pages is essentially **static files + automation**\n- Jekyll abstracts a lot, but adds its own complexity\n- Local-first workflows reduce friction long-term\n- Blogging here is closer to software engineering than traditional blogging\n\n---\n\n## ❓ Questions\n- How much Jekyll customization is worth it vs keeping things minimal?\n- At what point does this workflow become overkill?\n- Should content live in the same repo as labs, or be separated?\n\n---\n\n## 📚 Resources\n- YouTube: Basics on how to blog with GitHub  \n  https://www.youtube.com/watch?v=EvYs1idcGnM\n"
+}

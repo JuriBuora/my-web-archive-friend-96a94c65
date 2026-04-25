@@ -1,0 +1,20 @@
+{
+  "day": 1,
+  "title": "Environment Setup & Foundations",
+  "date": "2026-01-19",
+  "url": "https://juribuora.github.io/blog/2026/01/19/day-01.html",
+  "category": "blog",
+  "tags": [
+    "virtualmachine",
+    "parallels",
+    "macbook",
+    "windows11",
+    "kalilinux",
+    "ubuntu",
+    "obsidian",
+    "cybersecurity"
+  ],
+  "slug": "day-01",
+  "sourcePath": "Blog/_posts/2026-01-19-day-01.md",
+  "content": "---\n\n## 🎯 Goal\nBuild a clean, reproducible cybersecurity lab and a unified knowledge system to support long-term learning and documentation.\n\n---\n\n## ✅ What I Did\n\n### Virtualization & Environment\n- Installed and configured **Parallels Desktop Pro**\n- Created and verified the following virtual machines:\n  - Windows 11\n  - Kali Linux\n  - Ubuntu Linux\n- Considered (not yet installed) a **Windows Server VM**\n\n### Knowledge Management\n- Installed **Obsidian**\n- Enabled synchronization across all devices\n- Created a single root folder:\n\nCybersecurity/\n- Labs\n- Daily\n- GitHub Portfolio\n- Reports\n- Templates\n- Useful\n- Screenshots\n\n### Kali Linux – Initial Operations\n- Updated and cleaned the system:\n  - `sudo apt update`\n  - `sudo apt full-upgrade -y`\n  - `sudo apt autoremove -y`\n- Reviewed software installation methods:\n  - APT (official repositories)\n  - Snap / Flatpak / AppImage\n\n### Accounts Created\n- TryHackMe → https://tryhackme.com\n- GitHub → https://github.com\n\n---\n\n## ✅ What Worked\n- Parallels runs all VMs smoothly on macOS\n- Kali Linux is stable and ready for labs\n- Obsidian folder structure feels scalable and clean\n- Understanding install methods reduced blind copy-pasting\n\n---\n\n## ❌ What Didn’t\n- Software installation methods feel fragmented:\n  - APT (official repositories)\n  - Snap / Flatpak / AppImage\n- Still unclear when containers are preferable to native installs\n\n---\n\n## 🧠 Key Takeaways\n- Environment setup is a **force multiplier**, not busywork\n- Kali should remain lean; not every tool belongs system-wide\n- Documentation matters as much as execution\n- Doing this properly once prevents chaos later\n\n---\n\n## ❓ Questions\n- When does a Windows Server VM become truly necessary?\n- When should Docker/Podman be preferred over native installs?\n- What tools should always exist on Kali vs installed per lab?\n\n---\n\n## 📚 Resources\n- TryHackMe Learning Paths: https://tryhackme.com/paths\n\n---\n\n### Personal Objective (Why This Exists)\n- ⬜ Transition into a **remote-capable cybersecurity role**\n- ⬜ Build habit of **continuous learning and documentation**\n- ⬜ Within **5–7 months**:\n  - Complete and document **≥15 penetration tests**\n  - Identify and fix real vulnerabilities\n  - Be **junior-level hireable**, not “enthusiastic but useless”\n"
+}

@@ -1,0 +1,21 @@
+{
+  "day": 6,
+  "title": "Polishing Website & Fixing Jekyll Environment",
+  "date": "2026-01-24",
+  "url": "https://juribuora.github.io/blog/2026/01/24/day-06.html",
+  "category": "blog",
+  "tags": [
+    "jekyll",
+    "githubpages",
+    "vscode",
+    "ruby",
+    "rbenv",
+    "homebrew",
+    "websitemaintenance",
+    "blogging",
+    "troubleshooting"
+  ],
+  "slug": "day-06",
+  "sourcePath": "Blog/_posts/2026-01-24-day-06.md",
+  "content": "## 🎯 Goal\nPolish my GitHub Pages website, troubleshoot Jekyll environment issues, and consolidate past days’ notes for publication.\n\n## ✅ What I Did\n\n### Website & Blogging\n- Attempted to add themes in Jekyll\n- Encountered website breakage due to version incompatibilities\n- Formatted notes from previous days to be ready for publication\n\n### Troubleshooting Environment Issues\n- Identified multiple conflicting Jekyll, Ruby, and package manager versions\n- Observed VS Code losing GitHub integration (no commit/pull/push buttons)\n- Discovered multiple PATH conflicts from remnants of RVM, chruby, ruby-build, .rubies, and rbenv\n- Tried rolling back to previous versions, with partial success but new incompatibilities emerged\n\n### Cleaning & Reinstalling\n- Backed up `.zshrc`\n- Used a cleanup script to remove all Ruby version managers and duplicate PATH entries\n- Reinstalled Jekyll and Ruby, ensuring correct versions and consistent PATH setup\n- Updated `.zshrc` to the following working configuration:\n\n\n```zsh\n# === Homebrew first ===\nexport PATH=\"/opt/homebrew/bin:/opt/homebrew/sbin:$PATH\"\n\n# === rbenv setup ===\nexport PATH=\"$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH\"\n\n# Initialize rbenv\nif command -v rbenv >/dev/null 2>&1; then\n    eval \"$(rbenv init - zsh)\"\nfi\n\n# Deduplicate PATH\ntypeset -U PATH```\n```\n\n- Verified Jekyll, VS Code, and GitHub integration now working smoothly\n    \n\n### Learning\n\n- YouTube video: Jekyll Basics\n[https://www.youtube.com/watch?v=EmSrQCDsMv4](https://www.youtube.com/watch?v=EmSrQCDsMv4)\n\n---\n\n## ✅ What Worked\n\n- Cleanup script successfully removed all conflicting Ruby managers\n- Correctly configured `.zshrc` eliminated PATH duplication issues\n- VS Code GitHub integration fully restored\n- Jekyll site builds and runs locally without errors\n\n---\n\n## ❌ What Didn’t\n\n- Initial attempt to add themes broke the website\n- Version mismatch issues consumed hours of troubleshooting\n- ChatGPT guidance was sometimes misleading on PATH and version issues\n- Complexity of Ruby/Jekyll/Homebrew ecosystem exposed gaps in prior understanding\n\n---\n\n## 🧠 Key Takeaways\n\n- Version management matters: multiple version managers can conflict disastrously\n- PATH pollution is a real problem—cleaning `.zshrc` and deduplicating PATH is crucial\n- Backup configuration files before experimentation\n- Debugging environment issues can be more time-consuming than actual development\n- Persistent troubleshooting and methodical approach eventually resolve complex conflicts\n\n---\n\n## ❓ Questions\n\n- How can I prevent future version conflicts when experimenting with Jekyll or Ruby?\n- Are there simpler workflows for managing Ruby and Jekyll versions on macOS?\n- How much of the environment complexity is unavoidable vs. preventable?\n\n---\n\n## 📚 Resources\n\n- YouTube: Jekyll Basics  \n    [https://www.youtube.com/watch?v=EmSrQCDsMv4](https://www.youtube.com/watch?v=EmSrQCDsMv4)\n"
+}

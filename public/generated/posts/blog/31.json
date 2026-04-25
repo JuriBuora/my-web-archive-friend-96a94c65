@@ -1,0 +1,17 @@
+{
+  "day": 31,
+  "title": "Regex Behavior and Text Processing Foundations",
+  "date": "2026-02-28",
+  "url": "https://juribuora.github.io/blog/2026/02/28/day-31.html",
+  "category": "blog",
+  "tags": [
+    "linuxfundamentals",
+    "commandline",
+    "bash",
+    "webfundamentals",
+    "learningprocess"
+  ],
+  "slug": "day-31",
+  "sourcePath": "Blog/_posts/2026-02-28-day-31.md",
+  "content": "## 🎯 Goal\nStrengthen text-processing skills through regular expressions and command-line filtering — essential for log analysis and threat hunting.\n\n---\n\n## 🛠️ What I Did\n\nStudied regex behavior while working through *Effective Shell* materials.\n\nTopics explored:\n\n- Greedy vs lazy regex matching\n- Pattern capture boundaries\n- HTML-style matching examples\n- Troubleshooting regex validation errors\n\nExample:\n\n<tag>.+</tag>\n\nvs\n\n<tag>.+?</tag>\n\n```\n\n\nLearned how greedy matching consumes maximum possible input unless constrained.\n\n---\n\n## 🔐 Key Cybersecurity Connections\n\nRegex is fundamental for:\n\n- SIEM rule creation\n- Log filtering\n- IOC extraction\n- Detection engineering\n- Parsing authentication or process logs\n\nUnderstanding matching behavior prevents:\n- false positives\n- overmatching detections\n- missed indicators\n\n---\n\n## ⚠️ Challenges\n\nEncountered validation warnings when testing expressions.\n\nRoot cause:\n- Regex engines differ slightly.\n- Escaping rules vary by implementation.\n- Syntax correctness depends on parsing context.\n\n---\n\n## 🧠 What I Learned\n\n- Regex engines default to greedy behavior.\n- Lazy matching requires explicit modifiers.\n- Pattern design directly affects detection reliability.\n- Text manipulation skills translate directly into SOC workflows.\n\n---\n\n## 🚀 Next Steps\n\n- Integrate regex with grep usage.\n- Practice extracting structured data fields.\n- Begin thinking in pattern-based detection logic.\n\n---\n\n## 🔍 Reflection\n\nRegex stopped feeling like abstract syntax and started resembling investigative tooling — closer to how analysts interrogate large datasets.\n\n---\n\n## 📘 Lessons Learned\n\n**What worked**\n- Testing expressions visually.\n\n**What broke**\n- Assuming regex behaves universally across tools.\n\n**Why it broke**\n- Different engines enforce different parsing rules.\n\n**Fix / takeaway**\n- Always validate regex in the execution environment.\n"
+}

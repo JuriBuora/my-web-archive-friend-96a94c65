@@ -1,0 +1,20 @@
+{
+  "day": 8,
+  "title": "Killing Minima Ghosts & Owning the Stack",
+  "date": "2026-01-26",
+  "url": "https://juribuora.github.io/blog/2026/01/26/day-08.html",
+  "category": "blog",
+  "tags": [
+    "jekyll",
+    "githubpages",
+    "staticsite",
+    "css",
+    "debugging",
+    "tooling",
+    "rss",
+    "webfundamentals"
+  ],
+  "slug": "day-08",
+  "sourcePath": "Blog/_posts/2026-01-26-day-08.md",
+  "content": "## 🎯 Goal\n\nStabilize the blog setup by fully removing leftover theme dependencies, fixing broken assumptions, and taking **full ownership** of the Jekyll stack.\n## ✅ What I Did\n\n### 🧹 Theme Cleanup & Debugging\n\n- Found an error in `head.html` pointing to a missing `assets/main.scss`\n    \n- Realized this was **legacy Minima theme residue**\n    \n- Confirmed I had already switched to a **fully static theme**\n    \n- Removed / fixed references that assumed Minima was still present\n    \n- Verified that styling issues were **CSS-related**, not Jekyll-related\n\n📸 Screenshot showing the setup and error during debugging:\n![[Screenshot 2026-01-26 at 11.33.34.png]]\n\n### 🗂️ Structure & Organization\n\n- Reorganized folders to reflect actual intent\n    \n- Created a dedicated `blog/` folder for daily entries only\n    \n- Cleaned up misplaced files\n    \n- Fixed navigation order explicitly (no auto-magic)\n\n### 📡 Syndication\n\n- Successfully created a working **RSS feed (`feed.xml`)**\n    \n- Verified it only includes blog posts\n    \n- Confirmed it’s compatible with static hosting (GitHub Pages)\n\n## 🧠 What Clicked\n\n### 4️⃣ Why this is actually a win\n\nThis wasn’t “wasted time.”  \nThis was **foundational**.\n\nYou did what most beginners never do:\n\n- You **removed magic**\n    \n- You **understand every file**\n    \n- You **control your stack**\n    \n\nThis is how engineers work.  \nThis is how pentesters think.\n\n## 🧠 New Mental Model (Burn This In)\n\n- **Jekyll** = static site generator\n    \n- **Theme** = optional convenience\n    \n- **Static theme** = _your responsibility_\n    \n- *_Broken CSS ≠ broken Jekyll_\n    \n\nOnce you internalize this, debugging becomes mechanical—not emotional.\n\n## 🧾 Commits — Jan 26, 2026\n\n- 🔧 **Experimenting with RSS**\n    \n    - [`experimenting with feed.rss page`](https://github.com/JuriBuora/JuriBuora.github.io/commit/5bd8fe554feb909c5ea4b0cc07e8c2c1b58e68aa)\n        \n- ✅ **Reached stable state**\n    \n    - [`finally where i wanted to be`](https://github.com/JuriBuora/JuriBuora.github.io/commit/ba63e14e129eb07fc38b60e3706cc9d1bf0c6a96)\n        \n- 🧹 **Cleanup & refactor**\n    \n    - [`Moved stuff around`](https://github.com/JuriBuora/JuriBuora.github.io/commit/fc351ac227acdd9270fe376565760c2568743af5)\n        \n    - [`moved files around to be in the right folders`](https://github.com/JuriBuora/JuriBuora.github.io/commit/9349e3e8cd315199cee252279f24aa7d7648b3e5)\n        \n- 📝 **Content organization**\n    \n    - [`created new folder \"blog\" to store daily blog entries only`](https://github.com/JuriBuora/JuriBuora.github.io/commit/4e6028104fea19f2316f512844cf21432153745f)\n        \n- 🧭 **Navigation & UX**\n    \n    - [`Fixed the order of the items in the header and organized posts into categories`](https://github.com/JuriBuora/JuriBuora.github.io/commit/f485ace2b641a3297879b637d0023c40bee80005)\n        \n- 🖼️ **Branding**\n    \n    - [`modified config, head and header to properly see an image logo in the title`](https://github.com/JuriBuora/JuriBuora.github.io/commit/d2aa2c1fbff56a3ffae999cb9b31c1e98e0facf4)\n\n## 🧠 Key Takeaways\n\n- Theme leftovers are **technical debt**, not harmless clutter\n    \n- Static sites force you to understand the whole pipeline\n    \n- RSS is not “extra” — it’s infrastructure\n    \n- When things break cleanly, you’re doing something right\n"
+}

@@ -1,0 +1,1169 @@
+{
+  "posts": [
+    {
+      "day": 59,
+      "title": "Studying Malware Families: TrickBot, WannaMine and Cryptomining Threats",
+      "date": "2026-03-31",
+      "url": "https://juribuora.github.io/blog/2026/03/31/day-59.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-59",
+      "sourcePath": "Blog/_posts/2026-03-31-day-59.md",
+      "contentPath": "/generated/posts/blog/59.json"
+    },
+    {
+      "day": 58,
+      "title": "DLL Files, Code Signing, and Malware Trust Verification",
+      "date": "2026-03-30",
+      "url": "https://juribuora.github.io/blog/2026/03/30/day-58.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "windows",
+        "learningprocess"
+      ],
+      "slug": "day-58",
+      "sourcePath": "Blog/_posts/2026-03-30-day-58.md",
+      "contentPath": "/generated/posts/blog/58.json"
+    },
+    {
+      "day": 57,
+      "title": "LOLBins Deep Dive: Squiblydoo (rundll32 and mshtml Abuse)",
+      "date": "2026-03-29",
+      "url": "https://juribuora.github.io/blog/2026/03/29/day-57.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "windows",
+        "learningprocess"
+      ],
+      "slug": "day-57",
+      "sourcePath": "Blog/_posts/2026-03-29-day-57.md",
+      "contentPath": "/generated/posts/blog/57.json"
+    },
+    {
+      "day": 56,
+      "title": "Offensive Security Frameworks and LOLBins",
+      "date": "2026-03-28",
+      "url": "https://juribuora.github.io/blog/2026/03/28/day-56.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-56",
+      "sourcePath": "Blog/_posts/2026-03-28-day-56.md",
+      "contentPath": "/generated/posts/blog/56.json"
+    },
+    {
+      "day": 55,
+      "title": "Typosquatting and Malicious Domain Impersonation",
+      "date": "2026-03-27",
+      "url": "https://juribuora.github.io/blog/2026/03/27/day-55.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "learningprocess"
+      ],
+      "slug": "day-55",
+      "sourcePath": "Blog/_posts/2026-03-27-day-55.md",
+      "contentPath": "/generated/posts/blog/55.json"
+    },
+    {
+      "day": 54,
+      "title": "Investigating Phishing Through Email Gateway Logs",
+      "date": "2026-03-26",
+      "url": "https://juribuora.github.io/blog/2026/03/26/day-54.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-54",
+      "sourcePath": "Blog/_posts/2026-03-26-day-54.md",
+      "contentPath": "/generated/posts/blog/54.json"
+    },
+    {
+      "day": 53,
+      "title": "Understanding Phishing Attacks and Email Security Layers",
+      "date": "2026-03-25",
+      "url": "https://juribuora.github.io/blog/2026/03/25/day-53.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-53",
+      "sourcePath": "Blog/_posts/2026-03-25-day-53.md",
+      "contentPath": "/generated/posts/blog/53.json"
+    },
+    {
+      "day": 52,
+      "title": "First Steps with Python and JavaScript for Security",
+      "date": "2026-03-24",
+      "url": "https://juribuora.github.io/blog/2026/03/24/day-52.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "tryhackme",
+        "learningprocess"
+      ],
+      "slug": "day-52",
+      "sourcePath": "Blog/_posts/2026-03-24-day-52.md",
+      "contentPath": "/generated/posts/blog/52.json"
+    },
+    {
+      "day": 51,
+      "title": "CLI Fundamentals, OS Security, and Understanding How Data is Represented",
+      "date": "2026-03-23",
+      "url": "https://juribuora.github.io/blog/2026/03/23/day-51.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "commandline",
+        "webfundamentals",
+        "tryhackme",
+        "learningprocess"
+      ],
+      "slug": "day-51",
+      "sourcePath": "Blog/_posts/2026-03-23-day-51.md",
+      "contentPath": "/generated/posts/blog/51.json"
+    },
+    {
+      "day": 50,
+      "title": "Understanding Advanced Persistent Threat (APT) Groups",
+      "date": "2026-03-22",
+      "url": "https://juribuora.github.io/blog/2026/03/22/day-50.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-50",
+      "sourcePath": "Blog/_posts/2026-03-22-day-50.md",
+      "contentPath": "/generated/posts/blog/50.json"
+    },
+    {
+      "day": 49,
+      "title": "Investigating Phishing Infrastructure and Email Attacks",
+      "date": "2026-03-21",
+      "url": "https://juribuora.github.io/blog/2026/03/21/day-49.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-49",
+      "sourcePath": "Blog/_posts/2026-03-21-day-49.md",
+      "contentPath": "/generated/posts/blog/49.json"
+    },
+    {
+      "day": 48,
+      "title": "Detecting Authentication Attacks in System Logs",
+      "date": "2026-03-20",
+      "url": "https://juribuora.github.io/blog/2026/03/20/day-48.html",
+      "category": "blog",
+      "tags": [
+        "logs",
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-48",
+      "sourcePath": "Blog/_posts/2026-03-20-day-48.md",
+      "contentPath": "/generated/posts/blog/48.json"
+    },
+    {
+      "day": 47,
+      "title": "Encoded PowerShell and Obfuscated Command Execution",
+      "date": "2026-03-19",
+      "url": "https://juribuora.github.io/blog/2026/03/19/day-47.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-47",
+      "sourcePath": "Blog/_posts/2026-03-19-day-47.md",
+      "contentPath": "/generated/posts/blog/47.json"
+    },
+    {
+      "day": 46,
+      "title": "Understanding LOLBins and Living-off-the-Land Attacks",
+      "date": "2026-03-18",
+      "url": "https://juribuora.github.io/blog/2026/03/18/day-46.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-46",
+      "sourcePath": "Blog/_posts/2026-03-18-day-46.md",
+      "contentPath": "/generated/posts/blog/46.json"
+    },
+    {
+      "day": 45,
+      "title": "Pivot Training for Log Investigation",
+      "date": "2026-03-17",
+      "url": "https://juribuora.github.io/blog/2026/03/17/day-45.html",
+      "category": "blog",
+      "tags": [
+        "logs",
+        "commandline",
+        "learningprocess",
+        "cybersecurity"
+      ],
+      "slug": "day-45",
+      "sourcePath": "Blog/_posts/2026-03-17-day-45.md",
+      "contentPath": "/generated/posts/blog/45.json"
+    },
+    {
+      "day": 44,
+      "title": "Detecting Beaconing and Command-and-Control Traffic",
+      "date": "2026-03-16",
+      "url": "https://juribuora.github.io/blog/2026/03/16/day-44.html",
+      "category": "blog",
+      "tags": [
+        "logs",
+        "networking",
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-44",
+      "sourcePath": "Blog/_posts/2026-03-16-day-44.md",
+      "contentPath": "/generated/posts/blog/44.json"
+    },
+    {
+      "day": 43,
+      "title": "Detecting Suspicious Process Chains",
+      "date": "2026-03-15",
+      "url": "https://juribuora.github.io/blog/2026/03/15/day-43.html",
+      "category": "blog",
+      "tags": [
+        "processes",
+        "logs",
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-43",
+      "sourcePath": "Blog/_posts/2026-03-15-day-43.md",
+      "contentPath": "/generated/posts/blog/43.json"
+    },
+    {
+      "day": 42,
+      "title": "SOC Thinking: Turning Logs into Evidence",
+      "date": "2026-03-14",
+      "url": "https://juribuora.github.io/blog/2026/03/14/day-42.html",
+      "category": "blog",
+      "tags": [
+        "logs",
+        "commandline",
+        "learningprocess",
+        "cybersecurity"
+      ],
+      "slug": "day-42",
+      "sourcePath": "Blog/_posts/2026-03-14-day-42.md",
+      "contentPath": "/generated/posts/blog/42.json"
+    },
+    {
+      "day": 41,
+      "title": "Sysmon Telemetry, Lab Automation, and Full Cyber Lab Architecture",
+      "date": "2026-03-13",
+      "url": "https://juribuora.github.io/blog/2026/03/13/day-41.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "windows",
+        "logs",
+        "processes",
+        "commandline",
+        "learningprocess"
+      ],
+      "slug": "day-41",
+      "sourcePath": "Blog/_posts/2026-03-13-day-41.md",
+      "contentPath": "/generated/posts/blog/41.json"
+    },
+    {
+      "day": 40,
+      "title": "Building a Reproducible Windows SOC VM and Lab Infrastructure",
+      "date": "2026-03-12",
+      "url": "https://juribuora.github.io/blog/2026/03/12/day-40.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "windows",
+        "processes",
+        "logs",
+        "commandline",
+        "learningprocess"
+      ],
+      "slug": "day-40",
+      "sourcePath": "Blog/_posts/2026-03-12-day-40.md",
+      "contentPath": "/generated/posts/blog/40.json"
+    },
+    {
+      "day": 39,
+      "title": "Building a Portable Zsh Environment with GitHub Dotfiles",
+      "date": "2026-03-11",
+      "url": "https://juribuora.github.io/blog/2026/03/11/day-39.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "commandline",
+        "bash",
+        "githubpages",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-39",
+      "sourcePath": "Blog/_posts/2026-03-11-day-39.md",
+      "contentPath": "/generated/posts/blog/39.json"
+    },
+    {
+      "day": 38,
+      "title": "SSH Brute-Force Investigation and Automated Defense",
+      "date": "2026-03-10",
+      "url": "https://juribuora.github.io/blog/2026/03/10/day-38.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "commandline",
+        "logs",
+        "ssh",
+        "networking"
+      ],
+      "slug": "day-38",
+      "sourcePath": "Blog/_posts/2026-03-10-day-38.md",
+      "contentPath": "/generated/posts/blog/38.json"
+    },
+    {
+      "day": 37,
+      "title": "Ports, Services, and Investigating Listening Processes",
+      "date": "2026-03-09",
+      "url": "https://juribuora.github.io/blog/2026/03/09/day-37.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "networking",
+        "processes",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "day-37",
+      "sourcePath": "Blog/_posts/2026-03-09-day-37.md",
+      "contentPath": "/generated/posts/blog/37.json"
+    },
+    {
+      "day": 36,
+      "title": "Linux Process Investigation and First Log Exploration",
+      "date": "2026-03-07",
+      "url": "https://juribuora.github.io/blog/2026/03/07/day-36.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "processes",
+        "logs",
+        "learningprocess",
+        "labs"
+      ],
+      "slug": "day-36",
+      "sourcePath": "Blog/_posts/2026-03-07-day-36.md",
+      "contentPath": "/generated/posts/blog/36.json"
+    },
+    {
+      "day": 35,
+      "title": "Linux Process Baselining with ps and top",
+      "date": "2026-03-05",
+      "url": "https://juribuora.github.io/blog/2026/03/05/day-35.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "processes",
+        "cybersecurity",
+        "learningprocess",
+        "labs"
+      ],
+      "slug": "day-35",
+      "sourcePath": "Blog/_posts/2026-03-05-day-35.md",
+      "contentPath": "/generated/posts/blog/35.json"
+    },
+    {
+      "day": 34,
+      "title": "Networking Mental Model Reset (DNS, TCP/UDP, HTTPS/TLS, QUIC)",
+      "date": "2026-03-03",
+      "url": "https://juribuora.github.io/blog/2026/03/03/day-34.html",
+      "category": "blog",
+      "tags": [
+        "networking",
+        "tcpip",
+        "dns",
+        "http",
+        "webfundamentals",
+        "learningprocess",
+        "labs"
+      ],
+      "slug": "day-34",
+      "sourcePath": "Blog/_posts/2026-03-03-day-34.md",
+      "contentPath": "/generated/posts/blog/34.json"
+    },
+    {
+      "day": 33,
+      "title": "Expanding the SOC Learning Roadmap (Identity, Triage, and Hiring Readiness)",
+      "date": "2026-03-02",
+      "url": "https://juribuora.github.io/blog/2026/03/02/day-33.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess",
+        "documentation",
+        "tooling"
+      ],
+      "slug": "day-33",
+      "sourcePath": "Blog/_posts/2026-03-02-day-33.md",
+      "contentPath": "/generated/posts/blog/33.json"
+    },
+    {
+      "day": 32,
+      "title": "OSI Model, Encapsulation, and Core Network Protocols",
+      "date": "2026-03-01",
+      "url": "https://juribuora.github.io/blog/2026/03/01/day-32.html",
+      "category": "blog",
+      "tags": [
+        "networking",
+        "tcpip",
+        "cybersecurity",
+        "foundations",
+        "learningprocess"
+      ],
+      "slug": "day-32",
+      "sourcePath": "Blog/_posts/2026-03-01-day-32.md",
+      "contentPath": "/generated/posts/blog/32.json"
+    },
+    {
+      "day": 31,
+      "title": "Regex Behavior and Text Processing Foundations",
+      "date": "2026-02-28",
+      "url": "https://juribuora.github.io/blog/2026/02/28/day-31.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "webfundamentals",
+        "learningprocess"
+      ],
+      "slug": "day-31",
+      "sourcePath": "Blog/_posts/2026-02-28-day-31.md",
+      "contentPath": "/generated/posts/blog/31.json"
+    },
+    {
+      "day": 30,
+      "title": "Streams, Exit Codes, and Bash Redirection",
+      "date": "2026-02-27",
+      "url": "https://juribuora.github.io/blog/2026/02/27/day-30.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-30",
+      "sourcePath": "Blog/_posts/2026-02-27-day-30.md",
+      "contentPath": "/generated/posts/blog/30.json"
+    },
+    {
+      "day": 29,
+      "title": "SOC Thinking with Linux Pipelines, Pivots, and Process Chains",
+      "date": "2026-02-26",
+      "url": "https://juribuora.github.io/blog/2026/02/26/day-29.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "processes",
+        "logs",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "day-29",
+      "sourcePath": "Blog/_posts/2026-02-26-day-29.md",
+      "contentPath": "/generated/posts/blog/29.json"
+    },
+    {
+      "day": 28,
+      "title": "Understanding Command Resolution & Filesystem Investigation with find",
+      "date": "2026-02-25",
+      "url": "https://juribuora.github.io/blog/2026/02/25/day-28.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "filesystem",
+        "permissions",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-28",
+      "sourcePath": "Blog/_posts/2026-02-25-day-28.md",
+      "contentPath": "/generated/posts/blog/28.json"
+    },
+    {
+      "day": 27,
+      "title": "Command Resolution, PATH Internals & Shell Environment Investigation",
+      "date": "2026-02-24",
+      "url": "https://juribuora.github.io/blog/2026/02/24/day-27.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "filesystem",
+        "learningprocess"
+      ],
+      "slug": "day-27",
+      "sourcePath": "Blog/_posts/2026-02-24-day-27.md",
+      "contentPath": "/generated/posts/blog/27.json"
+    },
+    {
+      "day": 26,
+      "title": "Effective Shell Part 2: Pipelines, Readline Search, Job Control",
+      "date": "2026-02-22",
+      "url": "https://juribuora.github.io/blog/2026/02/22/day-26.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "processes",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "day-26",
+      "sourcePath": "Blog/_posts/2026-02-22-day-26.md",
+      "contentPath": "/generated/posts/blog/26.json"
+    },
+    {
+      "day": 25,
+      "title": "Effective Shell Fundamentals: ls, du, man, Heredocs, Updates, and Docker Permissions",
+      "date": "2026-02-18 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/18 00:00:00 +0100/day-25.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "filesystem",
+        "permissions",
+        "processes",
+        "logs",
+        "learningprocess"
+      ],
+      "slug": "day-25",
+      "sourcePath": "Blog/_posts/2026-02-18-day-25.md",
+      "contentPath": "/generated/posts/blog/25.json"
+    },
+    {
+      "day": 24,
+      "title": "Tools Lane Setup, Effective Shell, and Shutdown Triage",
+      "date": "2026-02-17 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/17 00:00:00 +0100/day-24.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "filesystem",
+        "processes",
+        "logs",
+        "learningprocess"
+      ],
+      "slug": "day-24",
+      "sourcePath": "Blog/_posts/2026-02-17-day-24.md",
+      "contentPath": "/generated/posts/blog/24.json"
+    },
+    {
+      "day": 23,
+      "title": "Consolidation, Repetition, and Anki-Driven Recall",
+      "date": "2026-02-15 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/15 00:00:00 +0100/day-23.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "learningprocess"
+      ],
+      "slug": "day-23",
+      "sourcePath": "Blog/_posts/2026-02-15-day-23.md",
+      "contentPath": "/generated/posts/blog/23.json"
+    },
+    {
+      "day": 22,
+      "title": "stdout, stderr, wget, and Output Validation",
+      "date": "2026-02-14 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/14 00:00:00 +0100/day-22.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "learningprocess"
+      ],
+      "slug": "day-22",
+      "sourcePath": "Blog/_posts/2026-02-14-day-22.md",
+      "contentPath": "/generated/posts/blog/22.json"
+    },
+    {
+      "day": 21,
+      "title": "Building My Detection Engineering Repo + Hardening My Blog Setup",
+      "date": "2026-02-13 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/13 00:00:00 +0100/day-21.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "logs",
+        "linux",
+        "commandline",
+        "githubpages",
+        "jekyll",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-21",
+      "sourcePath": "Blog/_posts/2026-02-13-day-21.md",
+      "contentPath": "/generated/posts/blog/21.json"
+    },
+    {
+      "day": 20,
+      "title": "Auditing a Media Archive and Taking Control of Backups",
+      "date": "2026-02-12 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/12 00:00:00 +0100/day-20.html",
+      "category": "blog",
+      "tags": [
+        "commandline",
+        "filesystem",
+        "logs",
+        "tooling",
+        "documentation",
+        "learningprocess"
+      ],
+      "slug": "day-20",
+      "sourcePath": "Blog/_posts/2026-02-12-day-20.md",
+      "contentPath": "/generated/posts/blog/20.json"
+    },
+    {
+      "day": 19,
+      "title": "Bare-Metal Dual Boot on Intel Mac (macOS + Ubuntu Server)",
+      "date": "2026-02-11 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/11 00:00:00 +0100/day-19.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "linuxfundamentals",
+        "filesystem",
+        "permissions",
+        "ssh",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "day-19",
+      "sourcePath": "Blog/_posts/2026-02-11-day-19.md",
+      "contentPath": "/generated/posts/blog/19.json"
+    },
+    {
+      "day": 18,
+      "title": "Intel Mac Dual-Boot Experiments, Architecture Friction, and Lab Prep",
+      "date": "2026-02-10 00:00:00 +0100",
+      "url": "https://juribuora.github.io/blog/2026/02/10 00:00:00 +0100/day-18.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "linuxfundamentals",
+        "cybersecurity",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-18",
+      "sourcePath": "Blog/_posts/2026-02-10-day-18.md",
+      "contentPath": "/generated/posts/blog/18.json"
+    },
+    {
+      "day": 17,
+      "title": "Cookies, Sessions, and Trust Boundaries",
+      "date": "2026-02-08",
+      "url": "https://juribuora.github.io/blog/2026/02/08/day-17.html",
+      "category": "blog",
+      "tags": [
+        "foundations",
+        "cybersecurity",
+        "webfundamentals",
+        "http",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "day-17",
+      "sourcePath": "Blog/_posts/2026-02-08-day-17.md",
+      "contentPath": "/generated/posts/blog/17.json"
+    },
+    {
+      "day": 16,
+      "title": "Linux Privilege Escalation: SUID, SGID, Sticky Bit (Foundations)",
+      "date": "2026-02-07",
+      "url": "https://juribuora.github.io/blog/2026/02/07/day-16.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "permissions",
+        "processes",
+        "linuxfundamentals",
+        "cybersecurity",
+        "labs"
+      ],
+      "slug": "day-16",
+      "sourcePath": "Blog/_posts/2026-02-07-day-16.md",
+      "contentPath": "/generated/posts/blog/16.json"
+    },
+    {
+      "day": 15,
+      "title": "Building a Proper Terminal Logging Pipeline",
+      "date": "2026-02-06",
+      "url": "https://juribuora.github.io/blog/2026/02/06/day-15.html",
+      "category": "blog",
+      "tags": [],
+      "slug": "day-15",
+      "sourcePath": "Blog/_posts/2026-02-06-day-15.md",
+      "contentPath": "/generated/posts/blog/15.json"
+    },
+    {
+      "day": 14,
+      "title": "Linux Permissions, Identity, Pipes, and Data Processing Fundamentals",
+      "date": "2026-02-05",
+      "url": "https://juribuora.github.io/blog/2026/02/05/day-14.html",
+      "category": "blog",
+      "tags": [
+        "linuxfundamentals",
+        "linux",
+        "commandline",
+        "permissions",
+        "filesystem",
+        "processes",
+        "logs",
+        "bash",
+        "ssh",
+        "learningprocess"
+      ],
+      "slug": "day-14",
+      "sourcePath": "Blog/_posts/2026-02-05-day-14.md",
+      "contentPath": "/generated/posts/blog/14.json"
+    },
+    {
+      "day": 13,
+      "title": "SSH and Networking Flow Between VMs",
+      "date": "2026-02-04",
+      "url": "https://juribuora.github.io/blog/2026/02/04/day-13.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "networking",
+        "commandline",
+        "ssh",
+        "learningprocess"
+      ],
+      "slug": "day-13",
+      "sourcePath": "Blog/_posts/2026-02-04-day-13.md",
+      "contentPath": "/generated/posts/blog/13.json"
+    },
+    {
+      "day": 12,
+      "title": "Linux Files, Permissions, and Safety",
+      "date": "2026-02-02",
+      "url": "https://juribuora.github.io/blog/2026/02/02/day-12.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "commandline",
+        "filesystem",
+        "permissions",
+        "logs",
+        "learningprocess"
+      ],
+      "slug": "day-12",
+      "sourcePath": "Blog/_posts/2026-02-02-day-12.md",
+      "contentPath": "/generated/posts/blog/12.json"
+    },
+    {
+      "day": 11,
+      "title": "Linux Fundamentals Part 3 (Finale)",
+      "date": "2026-01-31",
+      "url": "https://juribuora.github.io/blog/2026/01/31/day-11.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "linuxfundamentals",
+        "processes",
+        "automation",
+        "cron",
+        "packagemanagement",
+        "logs",
+        "ssh",
+        "networking",
+        "tryhackme"
+      ],
+      "slug": "day-11",
+      "sourcePath": "Blog/_posts/2026-01-31-day-11.md",
+      "contentPath": "/generated/posts/blog/11.json"
+    },
+    {
+      "day": 10,
+      "title": "Linux Fundamentals Part 2 (SSH, Filesystem, Permissions)",
+      "date": "2026-01-30",
+      "url": "https://juribuora.github.io/blog/2026/01/30/day-10.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "ssh",
+        "filepermissions",
+        "tryhackme",
+        "cybersecurityfoundations"
+      ],
+      "slug": "day-10",
+      "sourcePath": "Blog/_posts/2026-01-30-day-10.md",
+      "contentPath": "/generated/posts/blog/10.json"
+    },
+    {
+      "day": 9,
+      "title": "Linux Fundamentals Part 1",
+      "date": "2026-01-27",
+      "url": "https://juribuora.github.io/blog/2026/01/27/day-09.html",
+      "category": "blog",
+      "tags": [
+        "linux",
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "filesystem",
+        "grep",
+        "tryhackme",
+        "cybersecurityfoundations"
+      ],
+      "slug": "day-09",
+      "sourcePath": "Blog/_posts/2026-01-27-day-09.md",
+      "contentPath": "/generated/posts/blog/9.json"
+    },
+    {
+      "day": 8,
+      "title": "Killing Minima Ghosts & Owning the Stack",
+      "date": "2026-01-26",
+      "url": "https://juribuora.github.io/blog/2026/01/26/day-08.html",
+      "category": "blog",
+      "tags": [
+        "jekyll",
+        "githubpages",
+        "staticsite",
+        "css",
+        "debugging",
+        "tooling",
+        "rss",
+        "webfundamentals"
+      ],
+      "slug": "day-08",
+      "sourcePath": "Blog/_posts/2026-01-26-day-08.md",
+      "contentPath": "/generated/posts/blog/8.json"
+    },
+    {
+      "day": 7,
+      "title": "Workflow Ergonomics & GitHub Pages Stabilization",
+      "date": "2026-01-25",
+      "url": "https://juribuora.github.io/blog/2026/01/25/day-07.html",
+      "category": "blog",
+      "tags": [
+        "workflow",
+        "macos",
+        "linuxux",
+        "githubpages",
+        "jekyll",
+        "staticsites",
+        "tooling",
+        "documentation"
+      ],
+      "slug": "day-07",
+      "sourcePath": "Blog/_posts/2026-01-25-day-07.md",
+      "contentPath": "/generated/posts/blog/7.json"
+    },
+    {
+      "day": 6,
+      "title": "Polishing Website & Fixing Jekyll Environment",
+      "date": "2026-01-24",
+      "url": "https://juribuora.github.io/blog/2026/01/24/day-06.html",
+      "category": "blog",
+      "tags": [
+        "jekyll",
+        "githubpages",
+        "vscode",
+        "ruby",
+        "rbenv",
+        "homebrew",
+        "websitemaintenance",
+        "blogging",
+        "troubleshooting"
+      ],
+      "slug": "day-06",
+      "sourcePath": "Blog/_posts/2026-01-24-day-06.md",
+      "contentPath": "/generated/posts/blog/6.json"
+    },
+    {
+      "day": 5,
+      "title": "Blogging with GitHub Pages (Publishing Foundations)",
+      "date": "2026-01-23",
+      "url": "https://juribuora.github.io/blog/2026/01/23/day-05.html",
+      "category": "blog",
+      "tags": [
+        "githubpages",
+        "jekyll",
+        "blogging",
+        "documentation",
+        "vscode",
+        "github",
+        "learninginpublic"
+      ],
+      "slug": "day-05",
+      "sourcePath": "Blog/_posts/2026-01-23-day-05.md",
+      "contentPath": "/generated/posts/blog/5.json"
+    },
+    {
+      "day": 4,
+      "title": "No Progress (Logged Honestly)",
+      "date": "2026-01-22",
+      "url": "https://juribuora.github.io/blog/2026/01/22/day-04.html",
+      "category": "blog",
+      "tags": [
+        "dailylog",
+        "zeroday",
+        "consistency",
+        "learningprocess"
+      ],
+      "slug": "day-04",
+      "sourcePath": "Blog/_posts/2026-01-22-day-04.md",
+      "contentPath": "/generated/posts/blog/4.json"
+    },
+    {
+      "day": 3,
+      "title": "How Websites Work (Big Picture)",
+      "date": "2026-01-21",
+      "url": "https://juribuora.github.io/blog/2026/01/21/day-03.html",
+      "category": "blog",
+      "tags": [
+        "webfundamentals",
+        "dns",
+        "http",
+        "networking",
+        "visualization",
+        "tryhackme",
+        "cybersecurity"
+      ],
+      "slug": "day-03",
+      "sourcePath": "Blog/_posts/2026-01-21-day-03.md",
+      "contentPath": "/generated/posts/blog/3.json"
+    },
+    {
+      "day": 2,
+      "title": "Networking & Web Fundamentals (Consolidation Day)",
+      "date": "2026-01-20",
+      "url": "https://juribuora.github.io/blog/2026/01/20/day-02.html",
+      "category": "blog",
+      "tags": [
+        "tryhackme",
+        "networking",
+        "dns",
+        "http",
+        "packets",
+        "obsidian",
+        "parallels",
+        "cybersecurity"
+      ],
+      "slug": "day-02",
+      "sourcePath": "Blog/_posts/2026-01-20-day-02.md",
+      "contentPath": "/generated/posts/blog/2.json"
+    },
+    {
+      "day": 1,
+      "title": "Environment Setup & Foundations",
+      "date": "2026-01-19",
+      "url": "https://juribuora.github.io/blog/2026/01/19/day-01.html",
+      "category": "blog",
+      "tags": [
+        "virtualmachine",
+        "parallels",
+        "macbook",
+        "windows11",
+        "kalilinux",
+        "ubuntu",
+        "obsidian",
+        "cybersecurity"
+      ],
+      "slug": "day-01",
+      "sourcePath": "Blog/_posts/2026-01-19-day-01.md",
+      "contentPath": "/generated/posts/blog/1.json"
+    }
+  ],
+  "labs": [
+    {
+      "day": 4,
+      "title": "Endpoint Process Chain Triage with Pipe-Delimited Logs and awk",
+      "date": "2026-02-26",
+      "url": "https://juribuora.github.io/labs/2026/02/26/lab-04-day-29.html",
+      "category": "lab",
+      "tags": [
+        "cybersecurity",
+        "linuxfundamentals",
+        "commandline",
+        "bash",
+        "processes",
+        "logs",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-04-day-29",
+      "sourcePath": "Labs/_posts/2026-02-26-lab-04-day-29.md",
+      "contentPath": "/generated/posts/lab/4.json"
+    },
+    {
+      "day": 3,
+      "title": "HTTP in Practice (Pentester POV)",
+      "date": "2026-02-08",
+      "url": "https://juribuora.github.io/labs/2026/02/08/lab-03-day-17.html",
+      "category": "lab",
+      "tags": [
+        "foundations",
+        "cybersecurity",
+        "webfundamentals",
+        "http",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "lab-03-day-17",
+      "sourcePath": "Labs/_posts/2026-02-08-lab-03-day-17.md",
+      "contentPath": "/generated/posts/lab/3.json"
+    },
+    {
+      "day": 2,
+      "title": "Real SUID Behavior: Scripts vs Binaries",
+      "date": "2026-02-07",
+      "url": "https://juribuora.github.io/labs/2026/02/07/lab-02-day-16.html",
+      "category": "lab",
+      "tags": [
+        "linuxfundamentals",
+        "linux",
+        "commandline",
+        "permissions",
+        "processes",
+        "cybersecurity",
+        "labs"
+      ],
+      "slug": "lab-02-day-16",
+      "sourcePath": "Labs/_posts/2026-02-07-lab-02-day-16.md",
+      "contentPath": "/generated/posts/lab/2.json"
+    },
+    {
+      "day": 1,
+      "title": "Linux Permissions & Ownership Hands-On Practice",
+      "date": "2026-02-05 15:11:01",
+      "url": "https://juribuora.github.io/labs/2026/02/05 15:11:01/lab-01_day-14.html",
+      "category": "lab",
+      "tags": [],
+      "slug": "lab-01_day-14",
+      "sourcePath": "Labs/_posts/2026-02-05-lab-01_day-14.md",
+      "contentPath": "/generated/posts/lab/1.json"
+    }
+  ],
+  "allTags": [
+    "automation",
+    "bash",
+    "blogging",
+    "commandline",
+    "consistency",
+    "cron",
+    "css",
+    "cybersecurity",
+    "cybersecurityfoundations",
+    "dailylog",
+    "debugging",
+    "dns",
+    "documentation",
+    "filepermissions",
+    "filesystem",
+    "foundations",
+    "github",
+    "githubpages",
+    "grep",
+    "homebrew",
+    "http",
+    "jekyll",
+    "kalilinux",
+    "labs",
+    "learninginpublic",
+    "learningprocess",
+    "linux",
+    "linuxfundamentals",
+    "linuxux",
+    "logs",
+    "macbook",
+    "macos",
+    "networking",
+    "obsidian",
+    "packagemanagement",
+    "packets",
+    "parallels",
+    "permissions",
+    "processes",
+    "rbenv",
+    "rss",
+    "ruby",
+    "ssh",
+    "staticsite",
+    "staticsites",
+    "tcpip",
+    "tooling",
+    "troubleshooting",
+    "tryhackme",
+    "ubuntu",
+    "virtualmachine",
+    "visualization",
+    "vscode",
+    "webfundamentals",
+    "websitemaintenance",
+    "windows",
+    "windows11",
+    "workflow",
+    "zeroday"
+  ],
+  "source": "snapshot",
+  "generatedAt": "2026-04-25T14:20:50.827Z",
+  "upstream": {
+    "repo": "JuriBuora/JuriBuora.github.io",
+    "branch": "my-blog",
+    "site": "https://juribuora.github.io"
+  }
+}

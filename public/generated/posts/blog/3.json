@@ -1,0 +1,19 @@
+{
+  "day": 3,
+  "title": "How Websites Work (Big Picture)",
+  "date": "2026-01-21",
+  "url": "https://juribuora.github.io/blog/2026/01/21/day-03.html",
+  "category": "blog",
+  "tags": [
+    "webfundamentals",
+    "dns",
+    "http",
+    "networking",
+    "visualization",
+    "tryhackme",
+    "cybersecurity"
+  ],
+  "slug": "day-03",
+  "sourcePath": "Blog/_posts/2026-01-21-day-03.md",
+  "content": "## 🎯 Goal\nUnderstand how a website works end-to-end, from the user’s device to the server response, and reinforce this understanding through visual mapping.\n\n---\n\n## ✅ What I Did\n\n### Study & Practice\n- Completed TryHackMe room: **How Websites Work**\n- Completed TryHackMe section: **Putting It All Together**\n\n### Consolidation & Reflection\n- Reviewed and consolidated notes in Obsidian:\n  - The Basics of Cybersecurity\n  - Web fundamentals\n  - Network fundamentals\n- Re-read the **“Putting It All Together”** section slowly, focusing on flow rather than definitions\n- Created a **large visual diagram in Apple Freeform** connecting most of the concepts studied so far  \n  - This took significant time\n  - Actively exposed gaps and weak spots in understanding\n  - Forced clarification of relationships between concepts\n\n---\n\n## ✅ What Worked\n- Visualizing the full flow made abstract concepts concrete\n- Drawing connections highlighted missing or misunderstood steps\n- Revisiting notes *after* hands-on study improved retention\n- Slowing down instead of rushing new material paid off\n\n---\n\n## ❌ What Didn’t\n- Some protocol-level details are still fuzzy without packet-level analysis\n- The diagram became complex quickly, requiring pruning and simplification\n- Explaining the full flow verbally is still harder than recognizing it visually\n\n---\n\n## 🧠 Key Takeaways\n- A website load is a **sequence of dependent processes**, not a single action\n- DNS resolution is a prerequisite for everything else\n- Networking, web, and security concepts are tightly coupled\n- Visual mapping is a powerful tool for revealing weak understanding\n\n---\n\n## ❓ Questions\n- Which parts of this flow are most commonly attacked or misconfigured?\n- Where exactly do firewalls, WAFs, and CDNs intervene in the process?\n- What level of detail is necessary to explain this clearly to a non-technical person?\n\n---\n\n## 🧩 One-Sentence Summary\nA website works because a browser resolves a domain name to an IP address, establishes a network connection to a server, sends an HTTP request, and receives a response that it processes and displays.\n\n---\n\n## 📚 Resources\n- TryHackMe: How Websites Work  \n  https://tryhackme.com/room/howwebsiteswork\n"
+}

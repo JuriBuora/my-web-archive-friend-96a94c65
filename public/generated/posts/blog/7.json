@@ -1,0 +1,20 @@
+{
+  "day": 7,
+  "title": "Workflow Ergonomics & GitHub Pages Stabilization",
+  "date": "2026-01-25",
+  "url": "https://juribuora.github.io/blog/2026/01/25/day-07.html",
+  "category": "blog",
+  "tags": [
+    "workflow",
+    "macos",
+    "linuxux",
+    "githubpages",
+    "jekyll",
+    "staticsites",
+    "tooling",
+    "documentation"
+  ],
+  "slug": "day-07",
+  "sourcePath": "Blog/_posts/2026-01-25-day-07.md",
+  "content": "## 🎯 Goal\nReduce daily workflow friction and stabilize my GitHub Pages blog after repeated theme and configuration issues.\n\n---\n\n## ✅ What I Did\n\n### 🖱️ Workflow Ergonomics\n- Installed **AutoRaise** on macOS  \n  - Enabled *focus-follows-mouse* behavior (Linux-style)\n  - Windows automatically gain focus when hovering\n  - Improved multitasking across terminal, editor, and browser\n\n---\n\n### 🌐 GitHub Pages & Jekyll Work (Jan 25, 2026)\n\nMultiple commits focused on fixing structural and configuration issues:\n\n- Fixed recurring **syntax errors in `header.html`**\n- Modified `_config.yml` several times:\n  - Header & footer\n  - Social links\n  - Tests\n- Added and tested a **custom logo**\n- Modified:\n  - `README.md`\n  - Existing posts\n  - Test posts\n- Removed **Minima** theme\n- Switched to a **static theme**\n- Changed theme to **`jekyll-theme-leap-day`**\n- Added social usernames:\n  - Twitter\n  - LinkedIn\n  - Facebook\n- Modified:\n  - `Gemfile`\n  - About page\n  - Theme layout files\n- Added blog posts from previous days\n- Iterated repeatedly to fix breakages caused by theme switches\n\n---\n\n## ✅ What Worked\n- AutoRaise noticeably improved daily usability and focus\n- Switching away from Minima unlocked more layout control\n- Repeated exposure to Jekyll configs improved understanding\n- Incremental commits helped isolate some breaking changes\n\n---\n\n## ❌ What Didn’t\n- Header syntax errors resurfaced multiple times  \n  → shaky understanding of Liquid + HTML interaction\n- Theme switching caused cascading failures\n- Too many changes per session slowed debugging\n- Some commits were reactive rather than planned\n\n---\n\n## 🧠 Key Takeaways\n- Ergonomics directly impact learning efficiency\n- Jekyll themes are **opinionated systems**, not skins\n- Blog infrastructure **is part of the skillset**\n- Chaos is normal early — but must be reduced over time\n\n---\n\n## ❓ Questions\n- What’s the best way to validate Liquid + HTML before committing?\n- Should the theme now be frozen to avoid churn?\n- When does local Jekyll testing become mandatory rather than optional?\n\n---\n\n## 🧩 One-Sentence Summary\nToday was about smoothing my workflow and wrestling GitHub Pages into a stable state—painful, but essential groundwork.\n"
+}

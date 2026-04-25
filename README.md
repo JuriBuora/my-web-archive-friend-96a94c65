@@ -2,58 +2,77 @@
 
 Public learning log built with **React + Vite + TypeScript + Tailwind**, hosted on **GitHub Pages** at <https://juribuora.com>.
 
-The post content lives in a separate Jekyll repo: <https://github.com/JuriBuora/JuriBuora.github.io>. This site reads it directly — adding a post is just a markdown commit there.
+The source content lives in a separate Jekyll repo: <https://github.com/JuriBuora/JuriBuora.github.io>.
 
----
+This repo now mirrors that content at build time:
 
-## How to add a new post
+- the homepage and filters use a generated local manifest
+- each post page loads a same-origin static JSON snapshot
+- GitHub Pages redeploys on `main` pushes and also refreshes itself every 30 minutes
 
-1. In the Jekyll repo, create a markdown file under `Blog/_posts/` (or `Labs/_posts/`) named like `YYYY-MM-DD-day-NN.md` (or `YYYY-MM-DD-lab-NN-day-NN.md`).
-2. Use this front-matter:
-   ```yaml
-   ---
-   layout: post
-   title: "📅 Day 60 – Your Title Here"
-   date: 2026-04-01
-   categories: blog        # or "lab"
-   tags: [tag1, tag2]
-   ---
-   ```
-3. Commit and push.
+That means the browser no longer depends on the public GitHub API, while new posts from the Jekyll repo still flow over automatically.
 
-That's it. This site fetches the index from GitHub on load — no rebuild, no edit to `posts.ts` needed. The bundled `src/data/posts.ts` is only a fallback used if the GitHub API is rate-limited.
+## Publishing flow
+
+1. Add a new markdown post in `JuriBuora/JuriBuora.github.io` under `Blog/_posts/` or `Labs/_posts/`.
+2. Commit and push to the `my-blog` branch there.
+3. `juribuora.com` picks it up on the next scheduled refresh, or the next manual deploy of this repo.
+
+The mirrored site does not need a manual edit to `posts.ts` or any other content list.
 
 ## Local development
 
 ```bash
-bun install
-bun run dev
+npm install
+npm run dev
 ```
+
+Before `dev` and `build`, the repo runs:
+
+```bash
+npm run sync:jekyll
+```
+
+That script refreshes the generated snapshot from the upstream Jekyll repo. If GitHub is temporarily unavailable, it falls back to the last generated snapshot already stored in this repo.
 
 ## Deploy
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site and publishes it to GitHub Pages. The custom domain is set via `public/CNAME`.
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which:
 
-First-time setup:
-1. Repo Settings → Pages → Source: **GitHub Actions**.
-2. Repo Settings → Pages → Custom domain: `juribuora.com` (DNS already points here).
+1. installs dependencies with `npm ci`
+2. regenerates the mirrored snapshot during `prebuild`
+3. builds the site
+4. publishes `dist/` to GitHub Pages
+
+The same workflow also runs every 30 minutes so upstream Jekyll posts propagate automatically to `juribuora.com`.
 
 ## Project structure
 
-```
+```text
 src/
-  components/        UI building blocks
-  pages/             Route components (Index, PostPage, AboutPage, NotFound)
+  components/                   UI building blocks
+  pages/                        Route components
   data/
-    posts.ts         Static fallback list (kept for offline/rate-limit safety)
-    postsLoader.ts   Live loader that pulls from the Jekyll repo
-    jekyllSource.ts  Repo + branch config — change here if you fork the Jekyll source
-  hooks/usePosts.ts  React hook used by every page
+    posts.ts                    Shared post and snapshot types
+    jekyllSnapshot.generated.ts Auto-generated manifest used by the app
+  hooks/usePosts.ts             Thin wrapper around the generated snapshot
+scripts/
+  sync-jekyll-content.mjs       Pulls posts from the Jekyll repo and writes generated assets
+  generate-sitemap.ts           Builds sitemap.xml from the generated manifest
 public/
-  404.html           SPA fallback for GitHub Pages deep links
-  CNAME              Custom domain
+  generated/
+    manifest.json               Mirror manifest for build tooling and debugging
+    posts/                      Per-post JSON snapshots loaded by post pages
+  404.html                      SPA fallback for GitHub Pages deep links
+  CNAME                         Custom domain
 ```
 
-## Configuration knobs
+## Configuration
 
-Edit `src/data/jekyllSource.ts` to change the upstream Jekyll repo, branch, or folder layout.
+The upstream repo, branch, and folder mapping are defined in `scripts/sync-jekyll-content.mjs`.
+
+If you ever change the Jekyll repo layout, update that file and rerun:
+
+```bash
+npm run sync:jekyll
+```

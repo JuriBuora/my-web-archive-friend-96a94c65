@@ -1,0 +1,20 @@
+{
+  "day": 9,
+  "title": "Linux Fundamentals Part 1",
+  "date": "2026-01-27",
+  "url": "https://juribuora.github.io/blog/2026/01/27/day-09.html",
+  "category": "blog",
+  "tags": [
+    "linux",
+    "linuxfundamentals",
+    "commandline",
+    "bash",
+    "filesystem",
+    "grep",
+    "tryhackme",
+    "cybersecurityfoundations"
+  ],
+  "slug": "day-09",
+  "sourcePath": "Blog/_posts/2026-01-27-day-09.md",
+  "content": "## 🎯 Goal\n\nGet comfortable navigating and interrogating a Linux system using core terminal commands, instead of blindly copy-pasting.\n\n---\n\n## ✅ What I Did\n\n- Completed **TryHackMe – Linux Fundamentals Part 1**  \n    👉 [https://tryhackme.com/room/linuxfundamentalspart1](https://tryhackme.com/room/linuxfundamentalspart1)\n    \n- Practiced essential Linux commands:\n    \n    - User identification\n        \n    - File and directory navigation\n        \n    - File content inspection\n        \n    - Searching files and strings\n        \n    - Basic shell operators\n        \n- Made deliberate mistakes (wrong paths, wrong grep syntax) and corrected them by inspecting the filesystem instead of guessing.\n    \n\n---\n\n## 🧪 Commands Practiced\n\n### Identity & Output\n\n|Command|Purpose|\n|---|---|\n|`whoami`|Show current logged-in user|\n|`echo`|Output text to stdout|\n\n`tryhackme@linux1:~$ whoami`\n\n---\n\n### Navigation & File Discovery\n\n|Command|Full Name|\n|---|---|\n|`ls`|list|\n|`cd`|change directory|\n|`pwd`|print working directory|\n|`cat`|concatenate|\n\n`ls cd Pictures pwd`\n\n- Learned that directory names with spaces require quotes:\n    \n\n`ls \"Important Files\"`\n\n---\n\n### Viewing File Contents\n\n- Used `cat` to read text files directly\n    \n- Understood why dumping large files blindly is a bad idea (future: `less`, `head`, `tail`)\n    \n\n---\n\n### Finding Files\n\n- Located files by name:\n    \n\n`find -name passwords.txt`\n\n- Used wildcards:\n    \n\n`find -name \"*.txt\"`\n\n---\n\n### Searching File Contents with `grep`\n\n- Searched logs for specific strings:\n    \n\n`grep 'THM' access.log`\n\n- Learned correct vs incorrect syntax:  \n    ❌ `grep THM* access.log`  \n    ✅ `grep 'THM' access.log`\n    \n\n---\n\n### Recursive Searching\n\n- Searched across directories:\n    \n\n`grep -R 'THM' /home/tryhackme/`\n\n---\n\n## 🧠 Shell Operators Learned\n\n|Operator|Meaning|\n|---|---|\n|`&`|Run command in background|\n|`&&`|Run second command only if first succeeds|\n|`>`|Redirect output (overwrite)|\n|`>>`|Redirect output (append)|\n\nExamples:\n\n`command1 && command2 echo \"log\" > file.txt echo \"more\" >> file.txt`\n\n---\n\n## ✅ What Worked\n\n- Navigating directories logically instead of guessing paths\n    \n- Using `ls` before `cd` (basic, but critical)\n    \n- Understanding **why** grep failed instead of retrying randomly\n    \n- Seeing how small commands chain together into real workflows\n    \n\n---\n\n## ❌ What Didn’t\n\n- Initial misuse of `grep` wildcards\n    \n- Attempting to `cd` into directories without confirming they exist\n    \n- Underestimating how strict Linux is with syntax\n    \n\n---\n\n## 🧠 Key Takeaways\n\n- Linux doesn’t forgive assumptions — inspect first\n    \n- Wildcards are powerful but dangerous if misunderstood\n    \n- `grep` is foundational for log analysis and forensics\n    \n- Command-line literacy is non-negotiable in cybersecurity\n    \n\n---\n\n## ❓ Questions\n\n- When should `grep` be combined with other tools (`awk`, `sed`)?\n    \n- What are safe ways to inspect very large files?\n    \n- At what point does scripting replace manual command chains?\n    \n\n---\n\n## 📌 One-Sentence Summary\n\nLinux becomes manageable the moment you stop guessing and start interrogating the system methodically.\n"
+}

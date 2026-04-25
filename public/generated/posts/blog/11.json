@@ -1,0 +1,23 @@
+{
+  "day": 11,
+  "title": "Linux Fundamentals Part 3 (Finale)",
+  "date": "2026-01-31",
+  "url": "https://juribuora.github.io/blog/2026/01/31/day-11.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "linuxfundamentals",
+    "processes",
+    "automation",
+    "cron",
+    "packagemanagement",
+    "logs",
+    "ssh",
+    "networking",
+    "tryhackme"
+  ],
+  "slug": "day-11",
+  "sourcePath": "Blog/_posts/2026-01-31-day-11.md",
+  "content": "## 🎯 Goal\n\nFinish **Linux Fundamentals Part 3** and understand how Linux systems are actually managed day-to-day (editors, processes, services, automation, logs).\n\n---\n\n## ✅ What I Did\n\n- Completed **TryHackMe – Linux Fundamentals Part 3**\n    \n- Connected to target machine via **SSH**\n    \n- Used **Nano** to create and edit files\n    \n- Learned **VIM** exists and will eventually hurt me\n    \n- Downloaded files using `wget`\n    \n- Transferred files using `scp`\n    \n- Served files via:\n    \n    `python3 -m http.server`\n    \n- Inspected running processes with:\n    \n    `ps ps aux top`\n    \n- Managed services using `systemctl`\n    \n- Backgrounded and foregrounded processes (`&`, `Ctrl+Z`, `fg`)\n    \n- Created scheduled tasks using **cron**\n    \n- Learned how **APT repositories** and **GPG keys** work\n    \n- Explored system and service logs in `/var/log`\n    \n\n---\n\n## ✅ What Worked\n\n- SSH access and AttackBox workflow\n    \n- Python HTTP server for quick file hosting\n    \n- `systemctl` finally clicked conceptually\n    \n- Cron syntax makes sense with generators\n    \n- Logs clearly show why Linux is admin-friendly\n    \n\n---\n\n## ❌ What Didn’t\n\n- `wget` failed multiple times due to wrong URLs / inactive servers\n    \n- SSH connection errors early on (IP/availability issues)\n    \n- Still slow reading `ps aux` output efficiently\n    \n- Vim remains hostile territory\n    \n\n---\n\n## 🧠 Key Takeaways\n\n- Linux administration ≠ just commands, it’s **process control**\n    \n- `systemd`, cron, and logs are **core sysadmin knowledge**\n    \n- Backgrounding processes is a real productivity tool\n    \n- Logs are critical for both **defense and offense**\n    \n- Package management is about **trust**, not convenience\n    \n\n---\n\n## ❓ Questions\n\n- When should I switch from Nano to Vim seriously?\n    \n- What logs matter most during incident response?\n    \n- How deep should cron knowledge go before scripting takes over?\n"
+}
