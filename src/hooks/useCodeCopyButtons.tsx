@@ -1,33 +1,13 @@
 import { useEffect } from "react";
-import { Check, Copy } from "lucide-react";
 import { createRoot } from "react-dom/client";
-import { useState } from "react";
-
-const CopyBtn = ({ code }: { code: string }) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
-
-  return (
-    <button
-      onClick={handleCopy}
-      className="absolute top-2 right-2 p-1.5 rounded-md bg-secondary/80 border border-border text-muted-foreground hover:text-primary hover:bg-secondary transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100"
-      aria-label="Copy code"
-    >
-      {copied ? <Check className="w-3.5 h-3.5 text-primary" /> : <Copy className="w-3.5 h-3.5" />}
-    </button>
-  );
-};
+import type { Root } from "react-dom/client";
+import CodeCopyButton from "@/components/CodeCopyButton";
 
 const useCodeCopyButtons = (contentReady: boolean) => {
   useEffect(() => {
     if (!contentReady) return;
 
+    const roots: Root[] = [];
     const timer = setTimeout(() => {
       const container = document.querySelector("div.prose");
       if (!container) return;
@@ -41,11 +21,16 @@ const useCodeCopyButtons = (contentReady: boolean) => {
         pre.appendChild(wrapper);
 
         const code = pre.querySelector("code")?.textContent || pre.textContent || "";
-        createRoot(wrapper).render(<CopyBtn code={code} />);
+        const root = createRoot(wrapper);
+        roots.push(root);
+        root.render(<CodeCopyButton code={code} />);
       });
     }, 200);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      roots.forEach((root) => root.unmount());
+    };
   }, [contentReady]);
 };
 

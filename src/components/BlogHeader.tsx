@@ -1,6 +1,6 @@
 import { Shield, Github, Sun, Moon, Linkedin, Facebook, Twitter, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "@/hooks/use-theme";
 
 const BlogHeader = () => {
   const { theme, toggle } = useTheme();
