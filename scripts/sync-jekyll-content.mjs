@@ -243,7 +243,6 @@ async function buildSnapshot() {
     labs: labs.map(buildSummary),
     allTags: Array.from(new Set([...posts, ...labs].flatMap((post) => post.tags))).sort(),
     source: "snapshot",
-    generatedAt: new Date().toISOString(),
     upstream: {
       repo: UPSTREAM.repo,
       branch: UPSTREAM.branch,

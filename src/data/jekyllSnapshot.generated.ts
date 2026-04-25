@@ -1163,7 +1163,6 @@ export const jekyllSnapshot: LoadedPosts = {
     "zeroday"
   ],
   "source": "snapshot",
-  "generatedAt": "2026-04-25T14:20:50.827Z",
   "upstream": {
     "repo": "JuriBuora/JuriBuora.github.io",
     "branch": "my-blog",

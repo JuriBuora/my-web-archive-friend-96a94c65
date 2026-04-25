@@ -17,7 +17,6 @@ export type LoadedPosts = {
   labs: Post[];
   allTags: string[];
   source: "snapshot";
-  generatedAt: string;
   upstream: {
     repo: string;
     branch: string;
