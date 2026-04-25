@@ -22,8 +22,14 @@ type Entry = {
 };
 
 type GeneratedManifest = {
-  posts: Array<{ category: "blog" | "lab"; day: number; date: string }>;
-  labs: Array<{ category: "blog" | "lab"; day: number; date: string }>;
+  posts: Array<{ category: "blog" | "lab"; day: number; date: string; title: string }>;
+  labs: Array<{ category: "blog" | "lab"; day: number; date: string; title: string }>;
+};
+
+type RouteShell = {
+  routePath: string;
+  title: string;
+  description: string;
 };
 
 async function readManifestEntries(): Promise<Entry[]> {
@@ -37,6 +43,92 @@ async function readManifestEntries(): Promise<Entry[]> {
     changefreq: "monthly",
     priority: 0.7,
   }));
+}
+
+async function readManifest(): Promise<GeneratedManifest> {
+  const raw = await readFile(MANIFEST_PATH, "utf8");
+  return JSON.parse(raw) as GeneratedManifest;
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function injectRouteMeta(
+  html: string,
+  routePath: string,
+  title: string,
+  description: string,
+): string {
+  const url = `${SITE}${routePath}`;
+  const safeTitle = escapeHtml(title);
+  const safeDescription = escapeHtml(description);
+  return html
+    .replace(/<title>.*?<\/title>/, `<title>${safeTitle}</title>`)
+    .replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${url}" />`)
+    .replace(
+      /<meta name="description" content="[^"]*" \/>/,
+      `<meta name="description" content="${safeDescription}" />`,
+    )
+    .replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${url}" />`)
+    .replace(
+      /<meta property="og:title" content="[^"]*" \/>/,
+      `<meta property="og:title" content="${safeTitle}" />`,
+    )
+    .replace(
+      /<meta property="og:description" content="[^"]*" \/>/,
+      `<meta property="og:description" content="${safeDescription}" />`,
+    )
+    .replace(
+      /<meta name="twitter:title" content="[^"]*" \/>/,
+      `<meta name="twitter:title" content="${safeTitle}" />`,
+    )
+    .replace(
+      /<meta name="twitter:description" content="[^"]*" \/>/,
+      `<meta name="twitter:description" content="${safeDescription}" />`,
+    );
+}
+
+async function generateRouteShells(outDir: string, manifest: GeneratedManifest): Promise<void> {
+  const rootHtml = await readFile(path.join(outDir, "index.html"), "utf8");
+
+  const routes: RouteShell[] = [
+    {
+      routePath: "/about",
+      title: "About — Juri Buora",
+      description: "About Juri Buora and the public learning journey behind this cybersecurity log.",
+    },
+    ...manifest.posts.map((post) => ({
+      routePath: `/${post.category}/${post.day}`,
+      title: `${post.title} — Juri Buora`,
+      description: `Read "${post.title}" on Juri Buora's mirrored cybersecurity learning log.`,
+    })),
+    ...manifest.labs.map((post) => ({
+      routePath: `/${post.category}/${post.day}`,
+      title: `${post.title} — Juri Buora`,
+      description: `Read "${post.title}" on Juri Buora's mirrored cybersecurity learning log.`,
+    })),
+  ];
+
+  for (const route of routes) {
+    const routeHtml = injectRouteMeta(
+      rootHtml,
+      route.routePath,
+      route.title,
+      route.description,
+    );
+    const target = path.join(outDir, route.routePath.replace(/^\//, ""), "index.html");
+    await mkdir(path.dirname(target), { recursive: true });
+    await writeFile(target, routeHtml, "utf8");
+  }
+
+  // eslint-disable-next-line no-console
+  console.log(`[routes] Wrote ${routes.length} static route shells`);
 }
 
 function renderXml(entries: Entry[]): string {
@@ -66,8 +158,10 @@ export async function generateSitemap(outDir: string): Promise<void> {
   ];
 
   let mirroredEntries: Entry[] = [];
+  let manifest: GeneratedManifest | null = null;
 
   try {
+    manifest = await readManifest();
     mirroredEntries = await readManifestEntries();
     // eslint-disable-next-line no-console
     console.log(`[sitemap] Indexed ${mirroredEntries.length} mirrored post URLs`);
@@ -83,6 +177,11 @@ export async function generateSitemap(outDir: string): Promise<void> {
   await mkdir(outDir, { recursive: true });
   const target = path.join(outDir, "sitemap.xml");
   await writeFile(target, xml, "utf8");
+
+  if (manifest) {
+    await generateRouteShells(outDir, manifest);
+  }
+
   // eslint-disable-next-line no-console
   console.log(`[sitemap] Wrote ${target} (${staticEntries.length + mirroredEntries.length} URLs)`);
 }
