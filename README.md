@@ -1,78 +1,47 @@
-# juribuora.com — From Zero to Cybersecurity
+# Juri Buora Cybersecurity Learning Site
 
-Public learning log built with **React + Vite + TypeScript + Tailwind**, hosted on **GitHub Pages** at <https://juribuora.com>.
+Public React/Vite site for [juribuora.com](https://juribuora.com/). It presents my cybersecurity learning log as a fast static site while keeping the original writing in the Jekyll source repo: [JuriBuora.github.io](https://github.com/JuriBuora/JuriBuora.github.io).
 
-The source content lives in a separate Jekyll repo: <https://github.com/JuriBuora/JuriBuora.github.io>.
+## What this project demonstrates
 
-This repo now mirrors that content at build time:
+- React + Vite + TypeScript static-site build
+- Route-level code splitting for faster first load
+- Markdown post rendering with syntax highlighting
+- Static JSON snapshots generated from the upstream Jekyll repo
+- Sitemap and route shell generation for GitHub Pages
+- GitHub Actions deployment to GitHub Pages
+- Unit tests for route and date behavior
 
-- the homepage and filters use a generated local manifest
-- each post page loads a same-origin static JSON snapshot
-- GitHub Pages redeploys on `main` pushes and also refreshes itself every 30 minutes
+## How the content flow works
 
-That means the browser no longer depends on the public GitHub API, while new posts from the Jekyll repo still flow over automatically.
-
-## Publishing flow
-
-1. Add a new markdown post in `JuriBuora/JuriBuora.github.io` under `Blog/_posts/` or `Labs/_posts/`.
-2. Commit and push to the `my-blog` branch there.
-3. `juribuora.com` picks it up on the next scheduled refresh, or the next manual deploy of this repo.
-
-The mirrored site does not need a manual edit to `posts.ts` or any other content list.
+1. I write posts in `JuriBuora/JuriBuora.github.io`.
+2. `scripts/sync-jekyll-content.mjs` reads the public GitHub tree and raw Markdown files.
+3. The script writes a generated manifest and per-post JSON snapshots under `public/generated/`.
+4. The React app reads those local snapshots, so the browser does not depend on the GitHub API.
+5. GitHub Actions rebuilds the site on pushes and on a schedule.
 
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Before `dev` and `build`, the repo runs:
+Useful checks:
 
 ```bash
-npm run sync:jekyll
+npm run lint
+npm run test
+npm run build
+npm audit
 ```
 
-That script refreshes the generated snapshot from the upstream Jekyll repo. If GitHub is temporarily unavailable, it falls back to the last generated snapshot already stored in this repo.
+## Deployment
 
-## Deploy
+Deploys run through `.github/workflows/deploy.yml` and publish the generated `dist/` artifact to GitHub Pages.
 
-Pushing to `main` triggers `.github/workflows/deploy.yml`, which:
+The custom domain is configured through `public/CNAME`.
 
-1. installs dependencies with `npm ci`
-2. regenerates the mirrored snapshot during `prebuild`
-3. builds the site
-4. publishes `dist/` to GitHub Pages
+## Notes for reviewers
 
-The same workflow also runs every 30 minutes so upstream Jekyll posts propagate automatically to `juribuora.com`.
-
-## Project structure
-
-```text
-src/
-  components/                   UI building blocks
-  pages/                        Route components
-  data/
-    posts.ts                    Shared post and snapshot types
-    jekyllSnapshot.generated.ts Auto-generated manifest used by the app
-  hooks/usePosts.ts             Thin wrapper around the generated snapshot
-scripts/
-  sync-jekyll-content.mjs       Pulls posts from the Jekyll repo and writes generated assets
-  generate-sitemap.ts           Builds sitemap.xml from the generated manifest
-public/
-  generated/
-    manifest.json               Mirror manifest for build tooling and debugging
-    posts/                      Per-post JSON snapshots loaded by post pages
-  404.html                      SPA fallback for GitHub Pages deep links
-  CNAME                         Custom domain
-```
-
-## Configuration
-
-The upstream repo, branch, and folder mapping are defined in `scripts/sync-jekyll-content.mjs`.
-
-If you ever change the Jekyll repo layout, update that file and rerun:
-
-```bash
-npm run sync:jekyll
-```
+This is not meant to be a complex backend application. The point is to show that I can maintain a real public site, automate content ingestion, keep dependencies clean, test small pieces of behavior, and explain how the publishing flow works end to end.
