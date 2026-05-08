@@ -1,0 +1,17 @@
+{
+  "day": 73,
+  "title": "Detecting SSH Brute Force Attacks Using auth.log",
+  "date": "2026-04-14",
+  "url": "https://juribuora.github.io/blog/2026/04/14/day-73.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "logs",
+    "ssh",
+    "learningprocess"
+  ],
+  "slug": "day-73",
+  "sourcePath": "Blog/_posts/2026-04-14-day-73.md",
+  "content": "# 🔄 Topic\n\nAnalyzing Linux authentication logs to identify brute-force login attempts.\n\n---\n\n# 🎯 Goal\n\nLearn how to detect SSH brute-force attacks by analyzing real log data.\n\n---\n\n# 🛠 What I Did\n\nWorked with `/var/log/auth.log` and analyzed failed SSH login attempts.\n\nUsed command-line tools:\n\n```bash\ngrep \"Failed password\" /var/log/auth.log\n```\n\nThen extracted attacker IPs:\n\n```bash\ngrep \"Failed password\" /var/log/auth.log | awk '{print $(NF-3)}'\n```\n\nThen counted attempts:\n\n```bash\ngrep \"Failed password\" /var/log/auth.log | awk '{print $(NF-3)}' | sort | uniq -c | sort -nr\n```\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nSSH brute force is one of the most common attack types:\n\n- attackers try many passwords\n- target exposed SSH services\n- often automated\n\n---\n\n## 🔍 Investigation Questions\n\n- Which IP is generating the most failed attempts?\n- Are multiple usernames targeted?\n- Is the attack distributed or from a single source?\n\n---\n\n## 🚨 Detection Opportunities\n\n- multiple failed login attempts from same IP\n- rapid repeated authentication failures\n- login attempts across many usernames\n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1110 — Brute Force  \n\n---\n\n# ⚠ Challenges\n\nUnderstanding log structure and extracting the correct field.\n\n---\n\n# 📚 What I Learned\n\n- logs contain raw evidence  \n- aggregation reveals patterns  \n- simple tools can produce powerful insights  \n- field extraction needs to be verified against the actual log format\n- a useful detection starts with a clear question, not with a complicated command\n\n---\n\n# ➡ Next Steps\n\n- detect successful login after failures  \n- correlate IP with threat intelligence  \n\n---\n\n# 🧠 Reflection\n\nThis was the first time logs felt like **actual evidence**, not just text.\n\nThe strongest lesson was that a simple pipeline can become a real investigation when each step is explainable. I want future detections to have that same quality: transparent enough to defend, practical enough to use.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nUsing pipelines to transform data.\n\n**What broke**\n\nInitial confusion about field positions.\n\n**Why it broke**\n\nLog formats are not always intuitive.\n\n**Fix / takeaway**\n\nBreak logs step by step.\n\n---\n\n# 📈 Skill Progression Context\n\nThis is a core SOC skill: turning raw logs into actionable intelligence.\n\n---\n\n# 😄 TL;DR\n\nOne failed login = noise  \n1000 failed logins = someone knocking very loudly\n"
+}

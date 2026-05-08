@@ -1,0 +1,16 @@
+{
+  "day": 71,
+  "title": "Verifying Services and Understanding Why Connections Fail",
+  "date": "2026-04-12",
+  "url": "https://juribuora.github.io/blog/2026/04/12/day-71.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "networking",
+    "learningprocess"
+  ],
+  "slug": "day-71",
+  "sourcePath": "Blog/_posts/2026-04-12-day-71.md",
+  "content": "# 🔄 Topic\n\nUnderstanding why a service may fail even when a system is reachable.\n\n---\n\n# 🎯 Goal\n\nIdentify the difference between a reachable host and a working service.\n\n---\n\n# 🛠 What I Did\n\nInvestigated SSH connection failures by checking:\n\n- if the service was running  \n- if the port was open  \n- if the system was reachable  \n\nUsed tools like:\n\n```bash\nss -tulpn\n```\n\nto verify listening services.\n\nThis helped separate three different questions that are easy to mix together:\n\n- can I reach the host?\n- is the service actually listening?\n- is something in the path blocking the connection?\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nAttackers and defenders both rely on:\n\n- service enumeration  \n- identifying open ports  \n- validating reachable services  \n\n---\n\n## 🔍 Investigation Questions\n\n- Is the service running?\n- Is the port listening?\n- Is the firewall blocking access?\n\n---\n\n## 🚨 Detection Opportunities\n\n- unusual service exposure  \n- unexpected open ports  \n- abnormal listening processes  \n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1046 — Network Service Discovery  \n\n---\n\n# ⚠ Challenges\n\nConfusing:\n\n- network reachability  \n- service availability  \n\n---\n\n# 📚 What I Learned\n\n- a host can respond but still refuse connections  \n- services must be explicitly running  \n- verification requires multiple checks  \n- troubleshooting improves when each layer is tested separately\n- \"connection refused\" and \"host unreachable\" point to different problems\n\n---\n\n# ➡ Next Steps\n\n- explore firewall configurations  \n- simulate blocked vs open services  \n\n---\n\n# 🧠 Reflection\n\nThis reinforced a critical mindset:\n\n> Never assume — always verify.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nLayered troubleshooting.\n\n**What broke**\n\nAssuming connectivity equals functionality.\n\n**Why it broke**\n\nDifferent layers behave independently.\n\n**Fix / takeaway**\n\nValidate network, then service.\n\nThis is the kind of small distinction that matters in alert triage. A reachable host with a closed port is a different story from a missing host, a firewall block, or a broken route.\n\n---\n\n# 📈 Skill Progression Context\n\nThis strengthens troubleshooting and investigative thinking.\n\n---\n\n# 😄 TL;DR\n\nThe server wasn’t broken…  \nit just wasn’t listening.\n"
+}

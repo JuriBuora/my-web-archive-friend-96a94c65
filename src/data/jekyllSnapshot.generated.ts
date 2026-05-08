@@ -4,6 +4,578 @@ import type { LoadedPosts } from "./posts";
 export const jekyllSnapshot: LoadedPosts = {
   "posts": [
     {
+      "day": 96,
+      "title": "IP Spoofing, Sniffing, and Attack Technique Classification",
+      "date": "2026-05-07",
+      "url": "https://juribuora.github.io/blog/2026/05/07/day-96.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-96",
+      "sourcePath": "Blog/_posts/2026-05-07-day-96.md",
+      "contentPath": "/generated/posts/blog/96.json"
+    },
+    {
+      "day": 95,
+      "title": "DoS, DDoS, Smurf Attacks, and Amplification",
+      "date": "2026-05-06",
+      "url": "https://juribuora.github.io/blog/2026/05/06/day-95.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-95",
+      "sourcePath": "Blog/_posts/2026-05-06-day-95.md",
+      "contentPath": "/generated/posts/blog/95.json"
+    },
+    {
+      "day": 94,
+      "title": "DNS and ICMP Traffic Incident Analysis",
+      "date": "2026-05-05",
+      "url": "https://juribuora.github.io/blog/2026/05/05/day-94.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "dns",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-94",
+      "sourcePath": "Blog/_posts/2026-05-05-day-94.md",
+      "contentPath": "/generated/posts/blog/94.json"
+    },
+    {
+      "day": 93,
+      "title": "Turning Network Concepts into Incident Reports",
+      "date": "2026-05-04",
+      "url": "https://juribuora.github.io/blog/2026/05/04/day-93.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-93",
+      "sourcePath": "Blog/_posts/2026-05-04-day-93.md",
+      "contentPath": "/generated/posts/blog/93.json"
+    },
+    {
+      "day": 92,
+      "title": "Cybersecurity Roles Across the Attack Surface",
+      "date": "2026-05-03",
+      "url": "https://juribuora.github.io/blog/2026/05/03/day-92.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-92",
+      "sourcePath": "Blog/_posts/2026-05-03-day-92.md",
+      "contentPath": "/generated/posts/blog/92.json"
+    },
+    {
+      "day": 91,
+      "title": "Enterprise Attack Surface and Exploitation Points",
+      "date": "2026-05-02",
+      "url": "https://juribuora.github.io/blog/2026/05/02/day-91.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "webfundamentals",
+        "learningprocess"
+      ],
+      "slug": "day-91",
+      "sourcePath": "Blog/_posts/2026-05-02-day-91.md",
+      "contentPath": "/generated/posts/blog/91.json"
+    },
+    {
+      "day": 90,
+      "title": "Mapping an Enterprise Network End to End",
+      "date": "2026-05-01",
+      "url": "https://juribuora.github.io/blog/2026/05/01/day-90.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "webfundamentals",
+        "learningprocess"
+      ],
+      "slug": "day-90",
+      "sourcePath": "Blog/_posts/2026-05-01-day-90.md",
+      "contentPath": "/generated/posts/blog/90.json"
+    },
+    {
+      "day": 89,
+      "title": "From Protocol Memorization to SOC Thinking",
+      "date": "2026-04-30",
+      "url": "https://juribuora.github.io/blog/2026/04/30/day-89.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "learningprocess"
+      ],
+      "slug": "day-89",
+      "sourcePath": "Blog/_posts/2026-04-30-day-89.md",
+      "contentPath": "/generated/posts/blog/89.json"
+    },
+    {
+      "day": 88,
+      "title": "Security Design Principles and OAuth",
+      "date": "2026-04-29",
+      "url": "https://juribuora.github.io/blog/2026/04/29/day-88.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "webfundamentals",
+        "learningprocess"
+      ],
+      "slug": "day-88",
+      "sourcePath": "Blog/_posts/2026-04-29-day-88.md",
+      "contentPath": "/generated/posts/blog/88.json"
+    },
+    {
+      "day": 87,
+      "title": "Network Protocols, Ports, and SOC Visibility",
+      "date": "2026-04-28",
+      "url": "https://juribuora.github.io/blog/2026/04/28/day-87.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "tcpip",
+        "dns",
+        "learningprocess"
+      ],
+      "slug": "day-87",
+      "sourcePath": "Blog/_posts/2026-04-28-day-87.md",
+      "contentPath": "/generated/posts/blog/87.json"
+    },
+    {
+      "day": 86,
+      "title": "Investigating Botnets and IoT Malware",
+      "date": "2026-04-27",
+      "url": "https://juribuora.github.io/blog/2026/04/27/day-86.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-86",
+      "sourcePath": "Blog/_posts/2026-04-27-day-86.md",
+      "contentPath": "/generated/posts/blog/86.json"
+    },
+    {
+      "day": 85,
+      "title": "Understanding Cryptomining Malware",
+      "date": "2026-04-26",
+      "url": "https://juribuora.github.io/blog/2026/04/26/day-85.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-85",
+      "sourcePath": "Blog/_posts/2026-04-26-day-85.md",
+      "contentPath": "/generated/posts/blog/85.json"
+    },
+    {
+      "day": 84,
+      "title": "Lateral Movement Techniques in Enterprise Networks",
+      "date": "2026-04-25",
+      "url": "https://juribuora.github.io/blog/2026/04/25/day-84.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-84",
+      "sourcePath": "Blog/_posts/2026-04-25-day-84.md",
+      "contentPath": "/generated/posts/blog/84.json"
+    },
+    {
+      "day": 83,
+      "title": "The Colonial Pipeline Ransomware Incident",
+      "date": "2026-04-24",
+      "url": "https://juribuora.github.io/blog/2026/04/24/day-83.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-83",
+      "sourcePath": "Blog/_posts/2026-04-24-day-83.md",
+      "contentPath": "/generated/posts/blog/83.json"
+    },
+    {
+      "day": 82,
+      "title": "The NotPetya Cyberweapon and Destructive Malware",
+      "date": "2026-04-23",
+      "url": "https://juribuora.github.io/blog/2026/04/23/day-82.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-82",
+      "sourcePath": "Blog/_posts/2026-04-23-day-82.md",
+      "contentPath": "/generated/posts/blog/82.json"
+    },
+    {
+      "day": 81,
+      "title": "The WannaCry Global Ransomware Outbreak",
+      "date": "2026-04-22",
+      "url": "https://juribuora.github.io/blog/2026/04/22/day-81.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-81",
+      "sourcePath": "Blog/_posts/2026-04-22-day-81.md",
+      "contentPath": "/generated/posts/blog/81.json"
+    },
+    {
+      "day": 80,
+      "title": "Understanding Ransomware Attacks",
+      "date": "2026-04-21",
+      "url": "https://juribuora.github.io/blog/2026/04/21/day-80.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-80",
+      "sourcePath": "Blog/_posts/2026-04-21-day-80.md",
+      "contentPath": "/generated/posts/blog/80.json"
+    },
+    {
+      "day": 79,
+      "title": "Squiblydoo and Rundll32 Script Execution",
+      "date": "2026-04-20",
+      "url": "https://juribuora.github.io/blog/2026/04/20/day-79.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-79",
+      "sourcePath": "Blog/_posts/2026-04-20-day-79.md",
+      "contentPath": "/generated/posts/blog/79.json"
+    },
+    {
+      "day": 78,
+      "title": "Metasploit and Exploitation Frameworks",
+      "date": "2026-04-19",
+      "url": "https://juribuora.github.io/blog/2026/04/19/day-78.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-78",
+      "sourcePath": "Blog/_posts/2026-04-19-day-78.md",
+      "contentPath": "/generated/posts/blog/78.json"
+    },
+    {
+      "day": 77,
+      "title": "PowerShell Empire and Fileless Malware Techniques",
+      "date": "2026-04-18",
+      "url": "https://juribuora.github.io/blog/2026/04/18/day-77.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "processes",
+        "learningprocess"
+      ],
+      "slug": "day-77",
+      "sourcePath": "Blog/_posts/2026-04-18-day-77.md",
+      "contentPath": "/generated/posts/blog/77.json"
+    },
+    {
+      "day": 76,
+      "title": "Understanding Cobalt Strike and Post-Exploitation Frameworks",
+      "date": "2026-04-17",
+      "url": "https://juribuora.github.io/blog/2026/04/17/day-76.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-76",
+      "sourcePath": "Blog/_posts/2026-04-17-day-76.md",
+      "contentPath": "/generated/posts/blog/76.json"
+    },
+    {
+      "day": 75,
+      "title": "Understanding Fail2Ban and Automated Defense",
+      "date": "2026-04-16",
+      "url": "https://juribuora.github.io/blog/2026/04/16/day-75.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "defense",
+        "learningprocess"
+      ],
+      "slug": "day-75",
+      "sourcePath": "Blog/_posts/2026-04-16-day-75.md",
+      "contentPath": "/generated/posts/blog/75.json"
+    },
+    {
+      "day": 74,
+      "title": "Turning Raw Logs into Patterns and Evidence",
+      "date": "2026-04-15",
+      "url": "https://juribuora.github.io/blog/2026/04/15/day-74.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "logs",
+        "learningprocess"
+      ],
+      "slug": "day-74",
+      "sourcePath": "Blog/_posts/2026-04-15-day-74.md",
+      "contentPath": "/generated/posts/blog/74.json"
+    },
+    {
+      "day": 73,
+      "title": "Detecting SSH Brute Force Attacks Using auth.log",
+      "date": "2026-04-14",
+      "url": "https://juribuora.github.io/blog/2026/04/14/day-73.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "logs",
+        "ssh",
+        "learningprocess"
+      ],
+      "slug": "day-73",
+      "sourcePath": "Blog/_posts/2026-04-14-day-73.md",
+      "contentPath": "/generated/posts/blog/73.json"
+    },
+    {
+      "day": 72,
+      "title": "From Commands to Systems Thinking in Cybersecurity",
+      "date": "2026-04-13",
+      "url": "https://juribuora.github.io/blog/2026/04/13/day-72.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "learningprocess"
+      ],
+      "slug": "day-72",
+      "sourcePath": "Blog/_posts/2026-04-13-day-72.md",
+      "contentPath": "/generated/posts/blog/72.json"
+    },
+    {
+      "day": 71,
+      "title": "Verifying Services and Understanding Why Connections Fail",
+      "date": "2026-04-12",
+      "url": "https://juribuora.github.io/blog/2026/04/12/day-71.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-71",
+      "sourcePath": "Blog/_posts/2026-04-12-day-71.md",
+      "contentPath": "/generated/posts/blog/71.json"
+    },
+    {
+      "day": 70,
+      "title": "Mapping IP Addresses to Devices Using ARP",
+      "date": "2026-04-11",
+      "url": "https://juribuora.github.io/blog/2026/04/11/day-70.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-70",
+      "sourcePath": "Blog/_posts/2026-04-11-day-70.md",
+      "contentPath": "/generated/posts/blog/70.json"
+    },
+    {
+      "day": 69,
+      "title": "Understanding NAT vs Bridged Networking in a Lab Environment",
+      "date": "2026-04-10",
+      "url": "https://juribuora.github.io/blog/2026/04/10/day-69.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "labs",
+        "learningprocess"
+      ],
+      "slug": "day-69",
+      "sourcePath": "Blog/_posts/2026-04-10-day-69.md",
+      "contentPath": "/generated/posts/blog/69.json"
+    },
+    {
+      "day": 68,
+      "title": "Testing Network Connectivity and Verifying Open Ports",
+      "date": "2026-04-09",
+      "url": "https://juribuora.github.io/blog/2026/04/09/day-68.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "linux",
+        "learningprocess"
+      ],
+      "slug": "day-68",
+      "sourcePath": "Blog/_posts/2026-04-09-day-68.md",
+      "contentPath": "/generated/posts/blog/68.json"
+    },
+    {
+      "day": 67,
+      "title": "Investigating SSH Connection Failures and Security Warnings",
+      "date": "2026-04-08",
+      "url": "https://juribuora.github.io/blog/2026/04/08/day-67.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "networking",
+        "ssh",
+        "learningprocess"
+      ],
+      "slug": "day-67",
+      "sourcePath": "Blog/_posts/2026-04-08-day-67.md",
+      "contentPath": "/generated/posts/blog/67.json"
+    },
+    {
+      "day": 66,
+      "title": "Debugging DNS Resolution and Understanding Hosting Mismatch",
+      "date": "2026-04-07",
+      "url": "https://juribuora.github.io/blog/2026/04/07/day-66.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "githubpages",
+        "learningprocess"
+      ],
+      "slug": "day-66",
+      "sourcePath": "Blog/_posts/2026-04-07-day-66.md",
+      "contentPath": "/generated/posts/blog/66.json"
+    },
+    {
+      "day": 65,
+      "title": "Understanding GitHub Authentication, Cloning, and Local Repositories",
+      "date": "2026-04-06",
+      "url": "https://juribuora.github.io/blog/2026/04/06/day-65.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "githubpages",
+        "tooling",
+        "learningprocess"
+      ],
+      "slug": "day-65",
+      "sourcePath": "Blog/_posts/2026-04-06-day-65.md",
+      "contentPath": "/generated/posts/blog/65.json"
+    },
+    {
+      "day": 64,
+      "title": "AI Agents, Model Context Protocol (MCP), and Security Implications",
+      "date": "2026-04-05",
+      "url": "https://juribuora.github.io/blog/2026/04/05/day-64.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "learningprocess"
+      ],
+      "slug": "day-64",
+      "sourcePath": "Blog/_posts/2026-04-05-day-64.md",
+      "contentPath": "/generated/posts/blog/64.json"
+    },
+    {
+      "day": 63,
+      "title": "Understanding Local LLM Infrastructure and Model Quantization",
+      "date": "2026-04-04",
+      "url": "https://juribuora.github.io/blog/2026/04/04/day-63.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "learningprocess"
+      ],
+      "slug": "day-63",
+      "sourcePath": "Blog/_posts/2026-04-04-day-63.md",
+      "contentPath": "/generated/posts/blog/63.json"
+    },
+    {
+      "day": 62,
+      "title": "Understanding Phishing Attacks and Email Security Controls",
+      "date": "2026-04-03",
+      "url": "https://juribuora.github.io/blog/2026/04/03/day-62.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "webfundamentals",
+        "learningprocess"
+      ],
+      "slug": "day-62",
+      "sourcePath": "Blog/_posts/2026-04-03-day-62.md",
+      "contentPath": "/generated/posts/blog/62.json"
+    },
+    {
+      "day": 61,
+      "title": "Investigating the Dark Web Safely and Understanding Tor",
+      "date": "2026-04-02",
+      "url": "https://juribuora.github.io/blog/2026/04/02/day-61.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-61",
+      "sourcePath": "Blog/_posts/2026-04-02-day-61.md",
+      "contentPath": "/generated/posts/blog/61.json"
+    },
+    {
+      "day": 60,
+      "title": "Understanding Local AI, Model Hosting, and the Cloud vs Local Debate",
+      "date": "2026-04-01",
+      "url": "https://juribuora.github.io/blog/2026/04/01/day-60.html",
+      "category": "blog",
+      "tags": [
+        "cybersecurity",
+        "linux",
+        "networking",
+        "learningprocess"
+      ],
+      "slug": "day-60",
+      "sourcePath": "Blog/_posts/2026-04-01-day-60.md",
+      "contentPath": "/generated/posts/blog/60.json"
+    },
+    {
       "day": 59,
       "title": "Studying Malware Families: TrickBot, WannaMine and Cryptomining Threats",
       "date": "2026-03-31",
@@ -957,7 +1529,7 @@ export const jekyllSnapshot: LoadedPosts = {
     },
     {
       "day": 4,
-      "title": "No Progress (Logged Honestly)",
+      "title": "Recovery Day Logged Honestly",
       "date": "2026-01-22",
       "url": "https://juribuora.github.io/blog/2026/01/22/day-04.html",
       "category": "blog",
@@ -1122,6 +1694,7 @@ export const jekyllSnapshot: LoadedPosts = {
     "cybersecurityfoundations",
     "dailylog",
     "debugging",
+    "defense",
     "dns",
     "documentation",
     "filepermissions",

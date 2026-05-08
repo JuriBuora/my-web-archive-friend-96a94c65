@@ -1,0 +1,14 @@
+{
+  "day": 72,
+  "title": "From Commands to Systems Thinking in Cybersecurity",
+  "date": "2026-04-13",
+  "url": "https://juribuora.github.io/blog/2026/04/13/day-72.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "learningprocess"
+  ],
+  "slug": "day-72",
+  "sourcePath": "Blog/_posts/2026-04-13-day-72.md",
+  "content": "# 🔄 Topic\n\nRecognizing the shift from using commands to understanding systems.\n\n---\n\n# 🎯 Goal\n\nReflect on how individual troubleshooting steps connect into a broader investigative mindset.\n\n---\n\n# 🛠 What I Did\n\nOver the past sessions, I worked on:\n\n- SSH troubleshooting  \n- network connectivity testing  \n- port verification  \n- VM networking configuration  \n\nThese were initially isolated problems.\n\nThe pattern that emerged is more useful than the individual commands. Each issue forced me to ask where the failure lived: host, service, network path, name resolution, credentials, or configuration.\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nIn real SOC work, issues are rarely isolated.\n\nInstead, analysts must:\n\n- correlate signals  \n- understand systems  \n- connect multiple data points  \n\n---\n\n## 🔍 Investigation Questions\n\n- What layer is failing?\n- Is this network, service, or configuration?\n- What evidence supports each hypothesis?\n\n---\n\n## 🚨 Detection Opportunities\n\n- correlation across logs  \n- identifying patterns instead of single events  \n- combining network + endpoint signals  \n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1046 — Network Service Discovery  \n- T1021 — Remote Services  \n\n---\n\n# ⚠ Challenges\n\nMoving from:\n\n- command execution  \n→ to  \n- system understanding  \n\n---\n\n# 📚 What I Learned\n\n- tools are only part of the process  \n- investigation requires context  \n- systems thinking is essential  \n- the same symptom can come from several layers\n- good analysis means narrowing possibilities with evidence instead of jumping to the loudest explanation\n\n---\n\n# ➡ Next Steps\n\n- begin writing real detection rules  \n- analyze logs from lab activity  \n\n---\n\n# 🧠 Reflection\n\nThis feels like a transition point:\n\n> less “running commands”  \n> more “understanding what’s happening”\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nBreaking problems into layers.\n\n**What broke**\n\nSeeing each issue as isolated.\n\n**Why it broke**\n\nLack of system-level perspective.\n\n**Fix / takeaway**\n\nAlways connect signals into a bigger picture.\n\nThat is the employable skill I am trying to build here: not memorizing tools, but using tools to make careful decisions under uncertainty.\n\n---\n\n# 📈 Skill Progression Context\n\nThis marks the shift toward real SOC-level thinking and investigation.\n\n---\n\n# 😄 TL;DR\n\nIt’s not about the command anymore…  \nit’s about what the command is telling you.\n"
+}

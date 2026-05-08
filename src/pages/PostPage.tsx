@@ -15,12 +15,20 @@ import useCodeCopyButtons from "@/hooks/useCodeCopyButtons";
 import { normalizeCollectionSlug } from "@/lib/contentRoutes";
 import { formatPostDate } from "@/lib/postDates";
 
+const SKELETON_LINE_WIDTHS = [92, 78, 88, 64, 96, 72, 84, 68];
+
 const PostPage = () => {
   const { category, day } = useParams<{ category: string; day: string }>();
   const { posts, labs } = usePosts();
-  const [content, setContent] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [contentState, setContentState] = useState<{
+    content: string | null;
+    error: boolean;
+    path: string | null;
+  }>({
+    content: null,
+    error: false,
+    path: null,
+  });
 
   const allPosts = useMemo(
     () => [...posts, ...labs].sort((a, b) => a.day - b.day),
@@ -48,8 +56,6 @@ const PostPage = () => {
     if (!post) return;
 
     const controller = new AbortController();
-    setLoading(true);
-    setError(false);
 
     fetch(post.contentPath, { signal: controller.signal })
       .then(async (response) => {
@@ -57,8 +63,11 @@ const PostPage = () => {
           throw new Error(`Content request failed with ${response.status}`);
         }
         const payload = (await response.json()) as PostContentPayload;
-        setContent(payload.content);
-        setLoading(false);
+        setContentState({
+          content: payload.content,
+          error: false,
+          path: post.contentPath,
+        });
       })
       .catch((fetchError: unknown) => {
         if (
@@ -70,13 +79,19 @@ const PostPage = () => {
           return;
         }
 
-        setContent(null);
-        setLoading(false);
-        setError(true);
+        setContentState({
+          content: null,
+          error: true,
+          path: post.contentPath,
+        });
       });
 
     return () => controller.abort();
   }, [post]);
+
+  const loading = !!post && contentState.path !== post.contentPath;
+  const error = !!post && contentState.path === post.contentPath && contentState.error;
+  const content = contentState.path === post?.contentPath ? contentState.content : null;
 
   useCodeCopyButtons(!loading && !error && !!content);
 
@@ -170,11 +185,11 @@ const PostPage = () => {
           <div className="border border-border rounded-lg bg-card p-6 md:p-8 mb-10">
             {loading && (
               <div className="space-y-3 animate-pulse">
-                {Array.from({ length: 8 }).map((_, index) => (
+                {SKELETON_LINE_WIDTHS.map((width, index) => (
                   <div
                     key={index}
                     className="h-4 bg-secondary rounded"
-                    style={{ width: `${60 + Math.random() * 40}%` }}
+                    style={{ width: `${width}%` }}
                   />
                 ))}
               </div>

@@ -1,0 +1,16 @@
+{
+  "day": 66,
+  "title": "Debugging DNS Resolution and Understanding Hosting Mismatch",
+  "date": "2026-04-07",
+  "url": "https://juribuora.github.io/blog/2026/04/07/day-66.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "networking",
+    "githubpages",
+    "learningprocess"
+  ],
+  "slug": "day-66",
+  "sourcePath": "Blog/_posts/2026-04-07-day-66.md",
+  "content": "👉 Topic: DNS + infrastructure debugging (your real website work)\n# 🎯 Goal\n\nUnderstand why a domain was not resolving correctly and learn how DNS interacts with hosting services.\n\n---\n\n# 🔄 Context Switch\n\nShifted from Git workflow issues to **network-level troubleshooting**, focusing on DNS and website configuration.\n\n---\n\n# 🛠 What I Did\n\nWhile working on a website, I encountered an error:\n\n\"Domain does not resolve to the GitHub Pages server\"\n\nI used:\n\ndig cucurbitacee.com\n\nand discovered that DNS records were pointing elsewhere (likely another service like Lovable).\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nDNS misconfigurations can lead to:\n\n- service outages\n- domain hijacking risks\n- phishing infrastructure opportunities\n\n---\n\n## 🔍 Investigation Questions\n\n- Where does the domain currently resolve?\n- Are DNS records aligned with hosting provider?\n- Is traffic being misrouted?\n\n---\n\n## 🚨 Detection Opportunities\n\n- monitor DNS record changes\n- detect unexpected IP resolution\n- alert on anomalies in domain behavior\n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1565 — Data Manipulation  \n- T1584 — Compromise Infrastructure  \n\n---\n\n# ⚠ Challenges\n\nUnderstanding that:\n\n- DNS configuration must match hosting setup\n- multiple services (GitHub Pages vs Lovable) can conflict\n\n---\n\n# 📚 What I Learned\n\n- DNS is the source of truth for domain routing\n- incorrect A records break site availability\n- verification must be done with tools like `dig`\n\n---\n\n# ➡ Next Steps\n\n- explore DNSSEC\n- understand domain security best practices\n\n---\n\n# 🧠 Reflection\n\nInfrastructure issues are often subtle but critical.  \nSmall misconfigurations can completely break services.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nUsing real network tools to validate configuration.\n\n**What broke**\n\nMismatch between DNS and hosting.\n\n**Why it broke**\n\nMultiple services were involved.\n\n**Fix / takeaway**\n\nAlways validate infrastructure from the network perspective.\n\n---\n\n# 📈 Skill Progression Context\n\nThis strengthens networking fundamentals essential for SOC investigations and infrastructure security.\n"
+}

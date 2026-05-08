@@ -1,0 +1,16 @@
+{
+  "day": 75,
+  "title": "Understanding Fail2Ban and Automated Defense",
+  "date": "2026-04-16",
+  "url": "https://juribuora.github.io/blog/2026/04/16/day-75.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "defense",
+    "learningprocess"
+  ],
+  "slug": "day-75",
+  "sourcePath": "Blog/_posts/2026-04-16-day-75.md",
+  "content": "# 🔄 Topic\n\nExploring how systems automatically block attackers after repeated failures.\n\n---\n\n# 🎯 Goal\n\nUnderstand how Fail2Ban detects and blocks brute-force attacks.\n\n---\n\n# 🛠 What I Did\n\nObserved how repeated failed SSH attempts trigger:\n\n- IP ban rules  \n- firewall updates  \n\nFail2Ban monitors logs and reacts automatically.\n\nI treated it as a small model of detection engineering: define a pattern, watch the evidence, set a threshold, trigger a response, and then review the result.\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nFail2Ban represents:\n\n- automated detection + response  \n- basic intrusion prevention  \n\n---\n\n## 🔍 Investigation Questions\n\n- Which IP was banned?\n- How many attempts triggered the ban?\n- How long is the ban active?\n\n---\n\n## 🚨 Detection Opportunities\n\n- repeated failed logins before ban  \n- sudden drop in attempts after block  \n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1110 — Brute Force  \n\n---\n\n# ⚠ Challenges\n\nUnderstanding that:\n\n- blocking happens AFTER detection  \n- logs still contain the attack evidence  \n\n---\n\n# 📚 What I Learned\n\n- automation reduces manual effort  \n- detection must come before response  \n- logs remain critical for analysis  \n- response rules need tuning or they can create false positives\n- blocking an IP is useful, but understanding the activity is still necessary\n\n---\n\n# ➡ Next Steps\n\n- tune thresholds  \n- analyze false positives  \n\n---\n\n# 🧠 Reflection\n\nThis is defensive security in action:\n\n> detect → react → block\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nObserving automated blocking behaviour.\n\n**What broke**\n\nThinking blocking prevents all activity.\n\n**Why it broke**\n\nDetection happens after attempts.\n\n**Fix / takeaway**\n\nPrevention ≠ elimination.\n\nAutomated defense is valuable, but it does not replace investigation. It gives analysts time and reduces noise, while the logs still explain what happened and whether the rule behaved correctly.\n\n---\n\n# 📈 Skill Progression Context\n\nThis introduces automated defense mechanisms used in real environments.\n\n---\n\n# 😄 TL;DR\n\nFail2Ban is basically:  \n“try that again and you’re out”\n"
+}

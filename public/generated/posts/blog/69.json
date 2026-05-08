@@ -1,0 +1,16 @@
+{
+  "day": 69,
+  "title": "Understanding NAT vs Bridged Networking in a Lab Environment",
+  "date": "2026-04-10",
+  "url": "https://juribuora.github.io/blog/2026/04/10/day-69.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "networking",
+    "labs",
+    "learningprocess"
+  ],
+  "slug": "day-69",
+  "sourcePath": "Blog/_posts/2026-04-10-day-69.md",
+  "content": "# 🔄 Topic\n\nUnderstanding how virtual machine networking works and why NAT vs bridged mode matters in a cybersecurity lab.\n\n---\n\n# 🎯 Goal\n\nClarify the difference between NAT and bridged networking and understand how each affects connectivity and visibility.\n\n---\n\n# 🛠 What I Did\n\nWhile troubleshooting connectivity between machines in my lab, I explored how Parallels networking works.\n\nObserved two main modes:\n\n- NAT (Network Address Translation)\n- Bridged networking\n\nI noticed:\n\n- NAT assigns internal IPs (e.g. 10.211.x.x)\n- Bridged assigns IPs from the local network (e.g. 192.168.x.x)\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nNetworking mode directly affects:\n\n- visibility between systems\n- ability to simulate attacks\n- realism of lab environments\n\nIn NAT mode:\n- systems are partially isolated\n- external systems may not see internal hosts\n\nIn bridged mode:\n- VM behaves like a real machine on the network\n- easier to simulate real attack scenarios\n\n---\n\n## 🔍 Investigation Questions\n\n- Is the target system on the same network?\n- Are IP ranges compatible?\n- Is traffic being routed or blocked?\n\n---\n\n## 🚨 Detection Opportunities\n\n- unusual internal IP communication patterns\n- unexpected host visibility on network\n- lateral movement attempts across subnets\n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1021 — Remote Services  \n- T1046 — Network Service Discovery  \n\n---\n\n# ⚠ Challenges\n\nConfusion came from:\n\n- systems existing but not seeing each other\n- connectivity depending on network mode\n\n---\n\n# 📚 What I Learned\n\n- NAT simplifies setup but limits realism  \n- bridged networking enables real interaction  \n- lab design impacts what can be tested  \n\n---\n\n# ➡ Next Steps\n\n- standardize lab networking setup  \n- ensure consistent IP visibility between machines  \n\n---\n\n# 🧠 Reflection\n\nThis was a key realization:\n\n> Your lab is only as good as its network design.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nComparing IP ranges and network behavior.\n\n**What broke**\n\nAssuming all VMs could see each other.\n\n**Why it broke**\n\nDifferent networking modes isolate traffic.\n\n**Fix / takeaway**\n\nAlways validate network topology first.\n\n---\n\n# 📈 Skill Progression Context\n\nThis improves lab realism and prepares for network-based investigations in SOC environments.\n\n---\n\n# 😄 TL;DR\n\nIf your machines can’t see each other…  \nit’s not hacking — it’s networking.\n"
+}

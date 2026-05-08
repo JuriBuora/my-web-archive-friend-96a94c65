@@ -1,0 +1,17 @@
+{
+  "day": 67,
+  "title": "Investigating SSH Connection Failures and Security Warnings",
+  "date": "2026-04-08",
+  "url": "https://juribuora.github.io/blog/2026/04/08/day-67.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "networking",
+    "ssh",
+    "learningprocess"
+  ],
+  "slug": "day-67",
+  "sourcePath": "Blog/_posts/2026-04-08-day-67.md",
+  "content": "# 🔄 Topic\n\nTroubleshooting SSH connection failures and understanding security warnings during remote access.\n\n---\n\n# 🎯 Goal\n\nUnderstand why an SSH connection failed and analyze the meaning of security warnings related to encryption.\n\n---\n\n# 🛠 What I Did\n\nAttempted to connect to a remote machine via SSH:\n\nssh juribuora@192.168.0.32\n\nReceived the following:\n\n- warning about missing post-quantum key exchange\n- connection reset on port 22\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nSSH is a critical protocol used for:\n\n- remote administration\n- lateral movement in attacks\n- secure communication between systems\n\nA failed connection combined with warnings can indicate:\n\n- service misconfiguration\n- network issues\n- outdated cryptographic settings\n\n---\n\n## 🔍 Investigation Questions\n\n- Is the SSH service running on the target machine?\n- Is port 22 open and reachable?\n- Why is the connection being reset?\n- Is the warning related to a real vulnerability or just an upgrade recommendation?\n\n---\n\n## 🚨 Detection Opportunities\n\n- repeated failed SSH connection attempts\n- unusual connection resets across multiple hosts\n- outdated cryptographic configurations\n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1021 — Remote Services  \n- T1046 — Network Service Discovery  \n\n---\n\n# ⚠ Challenges\n\nTwo things happened at once:\n\n1. connection failure  \n2. cryptographic warning  \n\nThis makes troubleshooting harder because not all messages are equally important.\n\n---\n\n# 📚 What I Learned\n\n- not all warnings indicate immediate risk  \n- connection reset usually means service/network issue  \n- security warnings can be informational, not blocking  \n\n---\n\n# ➡ Next Steps\n\n- verify SSH service status on target machine  \n- check listening ports (`ss -tulpn`)  \n- test connectivity from both ends  \n\n---\n\n# 🧠 Reflection\n\nThis was a good example of how real-world troubleshooting is rarely clean — multiple signals appear at once, and not all of them are relevant.\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nReading and breaking down the error message.\n\n**What broke**\n\nAssuming the warning was the main issue.\n\n**Why it broke**\n\nMultiple signals created confusion.\n\n**Fix / takeaway**\n\nSeparate **connection issues** from **security warnings**.\n\n---\n\n# 📈 Skill Progression Context\n\nThis improves troubleshooting and protocol-level understanding, both critical for SOC investigations.\n\n---\n\n# 😄 TL;DR\n\nSSH didn’t break because of “post-quantum doom”…  \nit just wasn’t listening.\n"
+}

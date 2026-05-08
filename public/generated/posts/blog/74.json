@@ -1,0 +1,16 @@
+{
+  "day": 74,
+  "title": "Turning Raw Logs into Patterns and Evidence",
+  "date": "2026-04-15",
+  "url": "https://juribuora.github.io/blog/2026/04/15/day-74.html",
+  "category": "blog",
+  "tags": [
+    "cybersecurity",
+    "linux",
+    "logs",
+    "learningprocess"
+  ],
+  "slug": "day-74",
+  "sourcePath": "Blog/_posts/2026-04-15-day-74.md",
+  "content": "# 🔄 Topic\n\nUnderstanding how aggregation transforms logs into meaningful signals.\n\n---\n\n# 🎯 Goal\n\nLearn how counting and grouping log entries reveals attack patterns.\n\n---\n\n# 🛠 What I Did\n\nTook raw authentication logs and applied:\n\n- sorting  \n- counting  \n- ranking  \n\nUsed:\n\n```bash\nsort | uniq -c | sort -nr\n```\n\nto identify:\n\n- top attacking IPs  \n- frequency of attempts  \n\nThe result was a small but important shift: instead of looking at individual events, I was building a ranked view of what deserved attention first.\n\n---\n\n# 🔗 Key Cybersecurity Connections\n\nSOC analysts do not read logs line-by-line.\n\nThey:\n\n- aggregate  \n- group  \n- prioritize  \n\n---\n\n## 🔍 Investigation Questions\n\n- What is the most frequent event?\n- Which IP appears most often?\n- What stands out from the baseline?\n\n---\n\n## 🚨 Detection Opportunities\n\n- abnormal spikes in activity  \n- dominant IP addresses  \n- repeated patterns over time  \n\n---\n\n## 🧭 MITRE ATT&CK Techniques\n\n- T1110 — Brute Force  \n\n---\n\n# ⚠ Challenges\n\nUnderstanding that:\n\n- raw logs = noise  \n- processed logs = signal  \n\n---\n\n# 📚 What I Learned\n\n- counting creates visibility  \n- patterns reveal attacker behavior  \n- prioritization is critical  \n- aggregation is how raw events become a triage queue\n- the first job is to find what deserves attention fastest\n- prioritization is part of the analysis, not something that happens after it\n\n---\n\n# ➡ Next Steps\n\n- visualize log data  \n- correlate across multiple sources  \n\n---\n\n# 🧠 Reflection\n\nThis is where analysis starts:\n\n> not reading logs, but summarizing them\n\n---\n\n# 🧩 Lessons Learned\n\n**What worked**\n\nTransforming logs into counts.\n\n**What broke**\n\nTrying to interpret raw logs directly.\n\n**Why it broke**\n\nToo much data, no structure.\n\n**Fix / takeaway**\n\nAlways aggregate first.\n\nThis is also where analyst judgment starts to show. The command gives counts, but the analyst decides what is normal, what is strange, and what needs escalation.\n\n---\n\n# 📈 Skill Progression Context\n\nThis builds analytical thinking required for SOC alert triage.\n\n---\n\n# 😄 TL;DR\n\nLogs don’t speak…  \nuntil you make them count.\n"
+}
